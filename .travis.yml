@@ -1,0 +1,12 @@
+language: node_js
+node_js: stable
+before_script:
+- npm install -g gulp
+script: gulp build --prod
+deploy:
+  provider: heroku
+  api_key:
+    secure: Ju9Jfrk7bvQwcwIjxsATWrSoBj1rnDbnrrQI9pRocYC41Jw+bA+IUqYIYsn2KfhyXFXUyCh309lwmX8IhJjDqThJmYpshEKg2FaiB0HhecVnYFy+hhyHqycabSk6+uPQpgwNxRW8vhCssUHn7g+G37n9h+yjEmuhFioXXxNXk76qXmz6lMXyqpNw/kRRiTtqYz9JlWqYW1GewCTQN2u2Wpiilf44r4xXIsxw56h5KQaJU+Zt5JHKdzZGLibvWO9MyYM/KVPUSe6TG54MUVd6AYKv9EbihIUgO0EJhkdokR+ayI7h6I5lCtlGVOLc4an7n+aRVW3BrJbX1xJMHKxIfgBd9wmtmvaKtbQE3eVjLeuGjolNRbXVf2xpz9UJhA60tyewRBLSPlnbqFtbq8wyn/b4O5goM1l2sDhf1nTI3G2oYZ5Cu8aMvV9hlUMLfJS9XdNYNi2nqLj4UW9at7oaxlqZkkSFnx7qrbV5mUB1yxpTuwxFQYUZYF8S/tDSuBjKwB8yx+9SjkTwh3y64EpNPePkbUibcweM1VqP2qcNxchWCqRuWXrFWYIy5OeE/GTKzy+OFw5dPFa+rK94V3v3XLCxQ58k7TuQYE2Y4/2A5iwjdXwWTaCHMBEPyEqqakFyGYUwIbS9WPwOf6yqEmPPb00zemxuCLaR6BK6gydbDAw=
+  app: alex-foxleigh-portfolio
+  on:
+    repo: foxleigh81/alex-foxleigh-portfolio
