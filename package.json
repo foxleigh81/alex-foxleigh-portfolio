@@ -23,6 +23,7 @@
   },
   "scripts": {
     "start": "node server.js",
+    "build" : "node_modules/.bin/webpack",
     "dev": "webpack-dev-server"
   }
 }
