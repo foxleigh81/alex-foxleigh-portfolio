@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const RobotstxtPlugin = require('robotstxt-webpack-plugin').default
@@ -21,6 +22,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  },
   module: {
     rules: [
       // Process css styles
@@ -48,6 +53,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new RobotstxtPlugin(options),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({

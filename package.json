@@ -24,6 +24,6 @@
   "scripts": {
     "start": "node server.js",
     "postinstall" : "node_modules/.bin/webpack",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server --open"
   }
 }
