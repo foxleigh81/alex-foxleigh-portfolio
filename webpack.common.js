@@ -2,6 +2,11 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+const jeet = require('jeet')
+const rupture = require('rupture')
+const autoprefixer = require('autoprefixer-stylus')
 
 module.exports = {
   entry: {
@@ -19,11 +24,15 @@ module.exports = {
     rules: [
       // Process css styles
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        test: /\.styl$/i,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            'stylus-loader'
+            //'postcss-loader' // To be added
+          ]
+        })
       },
       {
         test: /\.js$/,
@@ -47,7 +56,23 @@ module.exports = {
     ]
   },
   plugins: [
+    // Delete old build so we have a fresh start each time
     new CleanWebpackPlugin(['dist']),
+    // Process styles
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        stylus: {
+          use: [
+            jeet(),
+            rupture(),
+            autoprefixer({ browsers: ['> 3%'] })
+          ]
+        },
+        context: '/'
+      }
+    }),
+    // Don't inject the styles as a style tag, extract them into core.css
+    new ExtractTextPlugin('core.css'),
     // Generate our HTML files for us
     new HtmlWebpackPlugin({
       template: './src/app.html',
