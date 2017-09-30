@@ -1,30 +1,19 @@
-const path = require('path')
 const webpack = require('webpack')
+const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const RobotstxtPlugin = require('robotstxt-webpack-plugin').default
-
-const options = {
-  policy: [
-    {
-      userAgent: '*',
-      disallow: '/'
-    }
-  ]
-}
 
 module.exports = {
   entry: {
-    app: './src/app.js'
+    app: './src/app.js',
+    vendor: [
+      'lodash'
+    ]
   },
   output: {
-    filename: '[name].bundle.js',
+    // name will match each entry point above and 'chunkchash' will ensure each new build doesn't cache
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist')
-  },
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-    hot: true
   },
   module: {
     rules: [
@@ -49,17 +38,25 @@ module.exports = {
         use: [
           'file-loader'
         ]
-      },
+      }
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new RobotstxtPlugin(options),
     new CleanWebpackPlugin(['dist']),
+    // Generate our HTML files for us
     new HtmlWebpackPlugin({
       title: 'Output Management'
+    }),
+    // Prevent unchanging modules from updating their hash
+    new webpack.HashedModuleIdsPlugin(),
+    // Put common vendor chunks into their own bundle
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    }),
+    // Put common internal chunks into their own bundle
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common'
     })
   ]
 }
-
 
