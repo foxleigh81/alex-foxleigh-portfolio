@@ -25,6 +25,11 @@ module.exports = {
           'css-loader'
         ]
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
       // Process images
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -45,7 +50,9 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     // Generate our HTML files for us
     new HtmlWebpackPlugin({
-      title: 'Output Management'
+      template: './src/app.html',
+      filename: 'index.html',
+      inject: 'body'
     }),
     // Prevent unchanging modules from updating their hash
     new webpack.HashedModuleIdsPlugin(),
