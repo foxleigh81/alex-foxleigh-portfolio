@@ -1,9 +1,17 @@
+// Import dependencies
 import React from 'react'
 import ReactDOM from 'react-dom'
 import DocumentMeta from 'react-document-meta'
 
-// Import styles
+// Import Stylesheet
 import './globals/styles/core.styl'
+
+// Import global data
+import data from './globals/data.json'
+
+// Import components
+import PageHeader from './components/c-page-header/view'
+
 class App extends React.Component {
   render () {
     const meta = {
@@ -20,7 +28,7 @@ class App extends React.Component {
     return (
       <div className='u-page-wrapper'>
         <DocumentMeta {...meta} />
-        <h1>Hello friends, I run in React!</h1>
+        <PageHeader data={data} />
       </div>
     )
   }

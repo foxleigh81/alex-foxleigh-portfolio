@@ -3,6 +3,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 const jeet = require('jeet')
 const rupture = require('rupture')
@@ -24,15 +25,14 @@ module.exports = {
     rules: [
       // Process css styles
       {
-        test: /\.styl$/i,
+        test: /\.styl$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            'css-loader',
-            'stylus-loader'
-            //'postcss-loader' // To be added
+            'css-loader', 'stylus-loader'
           ]
-        })
+        }),
+        include: path.join(__dirname, 'src')
       },
       {
         test: /\.js$/,
@@ -41,7 +41,7 @@ module.exports = {
       },
       // Process images
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|ico)$/,
         use: [
           'file-loader'
         ]
@@ -73,6 +73,8 @@ module.exports = {
     }),
     // Don't inject the styles as a style tag, extract them into core.css
     new ExtractTextPlugin('core.css'),
+    // Generate all our site icons
+    new FaviconsWebpackPlugin('./src/globals/images/site-icon.png'),
     // Generate our HTML files for us
     new HtmlWebpackPlugin({
       template: './src/app.html',

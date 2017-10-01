@@ -22,6 +22,21 @@ real-list() {
   }
 }
 
+// Makes a padded, inline link list, useful for navigation items)
+inline-link-list() {
+  display: table;
+  li {
+    display: table-cell;
+    a {
+      padding: $spacing;
+      display block
+    }
+  }
+  
+  
+  
+}
+
 // For buttons!
 button(bgc) {
   display: inline-block;
