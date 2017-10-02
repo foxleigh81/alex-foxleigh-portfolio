@@ -32,43 +32,37 @@
   "socialLinks" : [
     {
       "title" : "Behance",
-      "class" : "behance",
+      "class" : "u-icon--behance",
       "url" : "https://www.behance.net/foxleigh81/",
       "tooltip" : "Check me out on Behance"
     },
     {
-      "title" : "NPM",
-      "class" : "npm",
-      "url" : "https://www.npmjs.com/~foxleigh81",
-      "tooltip" : "Check out my NPM Packages"
-    },
-    {
       "title" : "GitHub",
-      "class" : "github",
+      "class" : "u-icon--github",
       "url" : "https://github.com/foxleigh81",
       "tooltip" : "Check me out on Github"
     },
     {
       "title" : "Dribbble",
-      "class" : "dribbble",
+      "class" : "u-icon--dribbble",
       "url" : "https://dribbble.com/foxleigh81",
       "tooltip" : "Check me out on Dribbble"
     },
     {
       "title" : "Twitter",
-      "class" : "twitter",
+      "class" : "u-icon--twitter",
       "url" : "https://twitter.com/foxleigh81",
       "tooltip" : "Follow me on Twitter"
     },
     {
       "title" : "Facebook",
-      "class" : "facebook",
+      "class" : "u-icon--facebook",
       "url" : "https://www.facebook.com/foxleigh81",
       "tooltip" : "Follow me on Facebook"
     },
     {
       "title" : "LinkedIn",
-      "class" : "linkedin",
+      "class" : "u-icon--linkedin",
       "url" : "https://uk.linkedin.com/in/alexfoxleigh",
       "tooltip" : "Connect with me on LinkedIn"
     }

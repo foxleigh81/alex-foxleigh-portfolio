@@ -1,3 +1,5 @@
+@require '../../globals/styles/_toolkit.styl'
+
 .c-main-nav {
   float:left;
   ul {
@@ -5,7 +7,14 @@
     li {
       a {
         color: $light;
-        font-weight bold
+        font-weight bold;
+      }
+      &:first-of-type {
+        a:before {
+          use-icon('\e88a')
+          margin-right: $spacing*.5
+          font-size: $outerCore;
+        }
       }
     }
   }
