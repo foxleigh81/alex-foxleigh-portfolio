@@ -34,8 +34,9 @@ module.exports = {
         }),
         include: path.join(__dirname, 'src')
       },
+      // Process JS (not spec files)
       {
-        test: /\.js$/,
+        test: /^(?!.*\.spec\.js$).*\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },

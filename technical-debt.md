@@ -13,7 +13,9 @@ Any development tasks or optimisations which need to be made should be listed he
 2. Build history page components
 3. Build testimonials page components
 4. Build skills page components
-4. Build contact page components
+5. Build contact page components
+6. Replace vh in templates with flexbox
 
 ## Issues
-1. Webpack stylus-loader is not compiling stylus files. I have raised it on (this)[https://is.gd/B1aEpQ] Stack Overflow question.
+1. Tests are not running, it looks like there is a dependency error with react-test-utils.
+2. There is some tearing in the rolling-hills.svg file, this is because a gradient was expanded, replace the expanded parts.

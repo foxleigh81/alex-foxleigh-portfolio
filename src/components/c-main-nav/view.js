@@ -4,10 +4,11 @@ import { NavLink as Link } from 'react-router-dom'
 // Import stylesheet
 import './style.styl'
 
+// The component itself
 export default class MainNav extends React.Component {
   render () {
-    let navigation = this.props.navigation
-    const navItems = navigation.map((item) => {
+    let nav = this.props.navigation
+    const navItems = nav.map((item) => {
       return (<li key={item.title}><Link exact activeClassName='u-active' to={item.url}>{item.title}</Link></li>)
     })
     return (

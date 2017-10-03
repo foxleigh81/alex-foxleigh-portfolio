@@ -1,6 +1,8 @@
 import React from 'react'
 import DocumentMeta from 'react-document-meta'
 
+// Import stylesheet
+import './style.styl'
 export default class Home extends React.Component {
   render () {
     // Uses the <DocumentMeta /> component to update meta tags in the <head> tag.
@@ -16,7 +18,7 @@ export default class Home extends React.Component {
       }
     }
     return (
-      <section>
+      <section className='t-home'>
         <DocumentMeta {...meta} />
         <h1>Yup. This is the home page</h1>
       </section>
