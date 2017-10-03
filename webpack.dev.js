@@ -9,6 +9,7 @@ module.exports = merge(common, {
   },
   devServer: {
     contentBase: './dist',
+    historyApiFallback: true,
     port: 3100
   },
   plugins: [
