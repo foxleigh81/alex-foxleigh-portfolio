@@ -18,4 +18,3 @@ Any development tasks or optimisations which need to be made should be listed he
 
 ## Issues
 1. Tests are not running, it looks like there is a dependency error with react-test-utils.
-2. There is some tearing in the rolling-hills.svg file, this is because a gradient was expanded, replace the expanded parts.
