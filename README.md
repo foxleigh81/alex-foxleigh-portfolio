@@ -5,4 +5,14 @@
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/foxleigh81/alex-foxleigh-portfolio.svg?columns=all)](https://waffle.io/foxleigh81/alex-foxleigh-portfolio)
 
 ## Introduction  
-WIP.
+
+My portfolio website built to show off my design and development skills. It uses the following tech stack:
+
+- React 16
+- GraphQL
+- MongoDB
+- Apollo
+- Jest
+- Enzyme
+
+This is a work in progress, the old version (built in an older version of React) can be found at http://www.alexfoxleigh.com

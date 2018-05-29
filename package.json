@@ -1,11 +1,26 @@
 {
-  "name": "server",
+  "name": "alex-foxleigh-portfolio",
   "version": "1.0.0",
-  "description": "The server layer for my portfolio site",
+  "description": "My portfolio site, built with React, GraphQl and MongoDB",
   "main": "server.js",
   "author": "Alex Foxleigh",
   "license": "MIT",
   "private": false,
+  "jest": {
+    "verbose": true
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "serverstart": "node server.js",
+    "appstart": "webpack-dev-server --open --mode development",
+    "test" : "jest"
+  },
+  "devDependencies": {
+    "jest": "^23.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "nyc": "^11.8.0"
+  },
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -25,10 +40,5 @@
     "webpack": "^4.10.1",
     "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.1.4"
-  },
-  "scripts": {
-    "build": "webpack --mode production",
-    "serverstart" : "node server.js",
-    "appstart" : "webpack-dev-server --open --mode development"
   }
 }
