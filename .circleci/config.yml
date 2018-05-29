@@ -1,7 +1,7 @@
 version: 2 # use CircleCI 2.0
 jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
-    working_directory: ~/ # directory where steps will run
+    working_directory: ~/repo # directory where steps will run
     docker: # run the steps with Docker
       - image: circleci/node:9.0.0 # ...with this image as the primary container; this is where all `steps` will run
       # - image: mongo:3.4.4 # and this image as the secondary service container
@@ -10,27 +10,23 @@ jobs: # a collection of steps
       - run:
           name: update-yarn 
           command: 'sudo npm install -g yarn@latest'
-      - restore_cache: # special step to restore the dependency cache 
-          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install dependencies
           command: yarn install
-      - save_cache: # special step to save the dependency cache
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
       - run: # run tests
           name: test
           command: yarn test
-      - run: # run coverage report
-          name: code-coverage
-          command: './node_modules/.bin/nyc report --reporter=text-lcov'
-      - store_artifacts: # special step to save test results as as artifact
-          path: test-results.xml
-          prefix: tests
-      - store_artifacts:
-          path: coverage
-          prefix: coverage
-      - store_test_results: # special step to upload test results for display in Test Summary
-          path: test-results.xml
+      # FIXME: NYC failing  
+      # - run: # run coverage report
+      #     name: code-coverage
+      #     command: './node_modules/.bin/nyc report --reporter=text-lcov'
+      # # FIXME: Artifacts not being created
+      # - store_artifacts: # special step to save test results as as artifact
+      #     path: test-results.xml
+      #     prefix: tests
+      # - store_artifacts:
+      #     path: coverage
+      #     prefix: coverage
+      # - store_test_results: # special step to upload test results for display in Test Summary
+      #     path: test-results.xml
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy example
