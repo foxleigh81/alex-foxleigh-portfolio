@@ -2,7 +2,7 @@
 
 [![Generic badge](https://img.shields.io/badge/under-construction-red.svg)](https://shields.io/)
 [![CircleCI](https://circleci.com/gh/foxleigh81/alex-foxleigh-portfolio.svg?style=shield)](https://circleci.com/gh/foxleigh81/alex-foxleigh-portfolio)
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/foxleigh81/alex-foxleigh-portfolio.svg?columns=Backlog,To%20Do,Blocked,In%20Progress)](https://waffle.io/foxleigh81/alex-foxleigh-portfolio)
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/foxleigh81/alex-foxleigh-portfolio.svg?columns=Backlog,To%20Do,Blocked,In%20Progress,Done)](https://waffle.io/foxleigh81/alex-foxleigh-portfolio)
 
 ## Introduction  
 
