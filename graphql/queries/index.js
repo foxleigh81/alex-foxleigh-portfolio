@@ -1,26 +1,25 @@
-var GraphQLObjectType = require('graphql').GraphQLObjectType
-var GraphQLList = require('graphql').GraphQLList
+import { GraphQLObjectType, GraphQLList } from 'graphql'
 
 // Import queries
-var configQuery = require('./config').queryType
-var contactDetailsQuery = require('./contact-details').queryType
-var socialNetworksQuery = require('./social-networks').queryType
-var skillsQuery = require('./skills').queryType
-var brandsQuery = require('./brands').queryType
-var langQuery = require('./lang').queryType
+import configQuery from './config'
+import contactDetailsQuery from './contact-details'
+import socialNetworksQuery from './social-networks'
+import skillsQuery from './skills'
+import brandsQuery from './brands'
+import langQuery from './lang'
 
 // Query
-exports.queryType = new GraphQLObjectType({
+export default new GraphQLObjectType({
   name: 'Query',
   description: 'Root Query',
-  fields: function () {
+  fields: () => {
     return {
       config: configQuery,
       contact_details: contactDetailsQuery,
       social_networks: socialNetworksQuery,
       skills: skillsQuery,
       brands: brandsQuery,
-      lang: langQuery,
+      lang: langQuery
     }
   }
 })

@@ -1,11 +1,12 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+import mongoose from 'mongoose'
+
+const Schema = mongoose.Schema
 
 // Cache the collection name
-var c = 'Config'
+const c = 'Config'
 
 // Config schema
-var ConfigSchema = new Schema({
+const ConfigSchema = new Schema({
   // Add children
   status: {
     type: String,
@@ -26,5 +27,4 @@ var ConfigSchema = new Schema({
 })
 
 // Export the model and specify the collection name to avoid pluralisation (hence the repeated 'c' variable)
-var Model = mongoose.model(c, ConfigSchema, c)
-module.exports = Model
+export default mongoose.model(c, ConfigSchema, c)

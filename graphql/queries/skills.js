@@ -1,12 +1,12 @@
-var GraphQLList = require('graphql').GraphQLList;
-var SkillsModel = require('../../models/skills');
-var SkillsType = require('../types/skills').skillsType;
+import { GraphQLList } from 'graphql'
+import SkillsModel from '../../models/skills'
+import { skillsType as SkillsType } from '../types/skills'
 
 // Query
-exports.queryType = {
+export default {
   type: new GraphQLList(SkillsType),
   description: 'The skills I possess',
-  resolve: function () {
+  resolve: () => {
     const skills = SkillsModel.find()
     if (!skills) {
       throw new Error('Error')

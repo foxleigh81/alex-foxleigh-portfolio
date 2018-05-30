@@ -1,11 +1,12 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+import mongoose from 'mongoose'
+
+const Schema = mongoose.Schema
 
 // Cache the collection name
-var c = 'Brands'
+const c = 'Brands'
 
 // Skills schema
-var BrandsSchema = new Schema({
+const BrandsSchema = new Schema({
   // Add children
   name: {
     type: String,
@@ -34,5 +35,4 @@ var BrandsSchema = new Schema({
 })
 
 // Export the model and specify the collection name to avoid pluralisation (hence the repeated 'c' variable)
-var Model = mongoose.model(c, BrandsSchema, c)
-module.exports = Model
+export default mongoose.model(c, BrandsSchema, c)

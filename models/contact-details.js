@@ -1,10 +1,10 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+import mongoose from 'mongoose'
+const Schema = mongoose.Schema;
 
 // Cache the collection name
-var c = 'ContactDetails'
+const c = 'ContactDetails'
 
-var ContactDetails = new Schema({
+const ContactDetails = new Schema({
   name: String,
   value: String,
   url: String,
@@ -12,5 +12,4 @@ var ContactDetails = new Schema({
 })
 
 // Export the model and specify the collection name to avoid pluralisation (hence the repeated 'c' variable)
-var Model = mongoose.model(c, ContactDetails, c)
-module.exports = Model
+export default mongoose.model(c, ContactDetails, c)

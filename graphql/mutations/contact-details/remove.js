@@ -1,9 +1,8 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var GraphQLString = require('graphql').GraphQLString
-var ContactDetailsType = require('../../types/contact-details')
-var ContactDetailsModel = require('../../../models/contact-details')
+import { GraphQLNonNull, GraphQLString } from 'graphql'
+import ContactDetailsType from '../../types/contact-details'
+import ContactDetailsModel from '../../../models/contact-details'
 
-exports.remove = {
+export default remove = {
   type: ContactDetailsType.contactDetailsType,
   args: {
     id: {

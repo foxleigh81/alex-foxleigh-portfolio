@@ -1,12 +1,12 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var BrandsType = require('../../types/brands')
-var BrandsModel = require('../../../models/brands')
+import { GraphQLNonNull } from 'graphql'
+import { brandsType, brandsInputType } from '../../types/brands'
+import BrandsModel from '../../../models/brands'
 
-exports.add = {
-  type: BrandsType.brandsType,
+export default {
+  type: brandsType,
   args: {
     brandsAdd: {
-      type: BrandsType.brandsInputType
+      type: brandsInputType
     }
   },
   resolve(root, { brandsAdd }) {

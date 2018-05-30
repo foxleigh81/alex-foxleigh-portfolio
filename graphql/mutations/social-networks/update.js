@@ -1,28 +1,27 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var GraphQLString = require('graphql').GraphQLString
-var SocialNetworksType = require('../../types/social-networks')
-var SocialNetworksModel = require('../../../models/social-networks')
+import { GraphQLNonNull, GraphQLString } from 'graphql'
+import { socialNetworksType, socialNetworksInputType } from '../../types/social-networks'
+import SocialNetworksModel from '../../../models/social-networks'
 
-exports.update = {
-  type: SocialNetworksType.socialNetworksType,
+export default {
+  type: socialNetworksType,
   description: 'Update a social network',
   args: {
     id: {
       name: 'id',
       type: new GraphQLNonNull(GraphQLString)
     },
-    socialNetworksUpdate: { type: SocialNetworksType.socialNetworksInputType }
+    socialNetworksUpdate: { type: socialNetworksInputType }
   },
   resolve(root, { id, socialNetworksUpdate }) {
     return SocialNetworksModel.findByIdAndUpdate(
       id,
       {
-        name: socialNetworksType.name,
-        icon_class: socialNetworksType.icon_class,
-        username: socialNetworksType.username,
-        profile_url: socialNetworksType.profile_url,
-        cta: socialNetworksType.cta,
-        active: socialNetworksType.active
+        name: socialNetworksUpdate.name,
+        icon_class: socialNetworksUpdate.icon_class,
+        username: socialNetworksUpdate.username,
+        profile_url: socialNetworksUpdate.profile_url,
+        cta: socialNetworksUpdate.cta,
+        active: socialNetworksUpdate.active
       },
       { new: true }
     ).exec()

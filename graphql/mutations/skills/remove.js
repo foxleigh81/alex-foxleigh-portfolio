@@ -1,10 +1,9 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var GraphQLString = require('graphql').GraphQLString
-var SkillsType = require('../../types/skills')
-var SkillsModel = require('../../../models/skills')
+import { GraphQLNonNull, GraphQLString } from 'graphql'
+import { skillsType } from '../../types/skills'
+import SkillsModel from '../../../models/skills'
 
-exports.remove = {
-  type: SkillsType.skillsType,
+export default {
+  type: skillsType,
   args: {
     id: {
       type: new GraphQLNonNull(GraphQLString)

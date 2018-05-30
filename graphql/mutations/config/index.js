@@ -1,13 +1,12 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var GraphQLString = require('graphql').GraphQLString
-var ConfigType = require('../../types/config')
-var ConfigModel = require('../../../models/config')
+import { GraphQLNonNull, GraphQLString } from 'graphql'
+import { configType, configInputType } from '../../types/config'
+import ConfigModel from '../../../models/config'
 
-exports.update = {
-  type: ConfigType.configType,
+export default {
+  type: configType,
   description: 'Update a config item',
   args: {
-    configUpdate: { type: ConfigType.configInputType }
+    configUpdate: { type: configInputType }
   },
   resolve(root, { configUpdate }) {
     return ConfigModel.findOneAndUpdate(

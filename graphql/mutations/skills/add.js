@@ -1,12 +1,12 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var SkillsType = require('../../types/skills')
-var SkillsModel = require('../../../models/skills')
+import { GraphQLNonNull } from 'graphql'
+import { skillsType, skillsInputType } from '../../types/skills'
+import SkillsModel from '../../../models/skills'
 
-exports.add = {
-  type: SkillsType.skillsType,
+export default {
+  type: skillsType,
   args: {
     skillsAdd: {
-      type: SkillsType.skillsInputType
+      type: skillsInputType
     }
   },
   resolve(root, { skillsAdd }) {
