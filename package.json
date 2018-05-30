@@ -10,8 +10,9 @@
     "verbose": true
   },
   "scripts": {
+    "start" : "yarn serverstart & yarn appstart",
     "build": "webpack --mode production",
-    "serverstart": "node server.js",
+    "serverstart": "babel-node server.js",
     "appstart": "webpack-dev-server --open --mode development",
     "test" : "jest"
   },
