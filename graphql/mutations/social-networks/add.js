@@ -1,12 +1,12 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var SocialNetworksType = require('../../types/social-networks')
-var SocialNetworksModel = require('../../../models/social-networks')
+import { GraphQLNonNull } from 'graphql'
+import { socialNetworksType, socialNetworksInputType } from '../../types/social-networks'
+import SocialNetworksModel from '../../../models/social-networks'
 
-exports.add = {
-  type: SocialNetworksType.socialNetworksType,
+export default {
+  type: socialNetworksType,
   args: {
     socialNetworksAdd: {
-      type: SocialNetworksType.socialNetworksInputType
+      type: socialNetworksInputType
     }
   },
   resolve(root, { socialNetworksAdd }) {

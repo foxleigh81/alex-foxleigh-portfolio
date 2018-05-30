@@ -1,13 +1,9 @@
-var GraphQLObjectType = require('graphql').GraphQLObjectType
-var GraphQLInputObjectType = require('graphql').GraphQLInputObjectType
-var GraphQLBoolean = require('graphql').GraphQLBoolean
-var GraphQLList = require('graphql').GraphQLList
-var GraphQLString = require('graphql').GraphQLString
+import { GraphQLObjectType, GraphQLInputObjectType, GraphQLBoolean, GraphQLList, GraphQLString } from 'graphql'
 
 // Import child types
-var ComponentType = require('./component')
+import ComponentType from './component'
 
-var dataShape = {
+const dataShape = {
   name: {
     type: GraphQLString,
     description: 'The name of the skill'
@@ -52,6 +48,7 @@ var dataShape = {
     type: GraphQLString,
     description: 'If the brand needs a special class, add it here'
   },
+
   //TODO: This requires some though as it's essentially passing an object into a page to render the rest. 
   // Maybe look into this some more when the frontend has been built
   components: {
@@ -61,13 +58,15 @@ var dataShape = {
 }
 
 // Pages Type
-exports.pagesType = new GraphQLObjectType({
+const pagesType = new GraphQLObjectType({
   name: 'pages',
   fields: () => dataShape
 })
 
 // Pages Input Type
-exports.pagesInputType = new GraphQLInputObjectType({
+const pagesInputType = new GraphQLInputObjectType({
   name: 'pagesInputType',
   fields: () => dataShape
 })
+
+export { pagesType, pagesInputType }

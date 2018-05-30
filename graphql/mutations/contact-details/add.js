@@ -1,8 +1,8 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var ContactDetailsType = require('../../types/contact-details')
-var ContactDetailsModel = require('../../../models/contact-details')
+import { GraphQLNonNull } from 'graphql'
+import ContactDetailsType from '../../types/contact-details'
+import ContactDetailsModel from '../../../models/contact-details'
 
-exports.add = {
+export default add = {
   type: ContactDetailsType.contactDetailsType,
   args: {
     contactDetailsAdd: {

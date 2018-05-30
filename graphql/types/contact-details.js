@@ -1,9 +1,6 @@
-var GraphQLObjectType = require('graphql').GraphQLObjectType
-var GraphQLInputObjectType = require('graphql').GraphQLInputObjectType
-var GraphQLBoolean = require('graphql').GraphQLBoolean
-var GraphQLString = require('graphql').GraphQLString
+import { GraphQLObjectType, GraphQLInputObjectType, GraphQLBoolean, GraphQLString } from 'graphql'
 
-let dataShape = {
+const dataShape = {
   name: {
     type: GraphQLString,
     description: 'The name of the contact service (e.g. `Email address`)'
@@ -22,12 +19,14 @@ let dataShape = {
   }
 }
 
-exports.contactDetailsType = new GraphQLObjectType({
+const contactDetailsType = new GraphQLObjectType({
   name: 'contactDetails',
   fields: () => dataShape
 })
 
-exports.contactDetailsInputType = new GraphQLInputObjectType({
+const contactDetailsInputType = new GraphQLInputObjectType({
   name: 'contactDetailsInputType',
   fields: () => dataShape
 })
+
+export { contactDetailsType, contactDetailsInputType }

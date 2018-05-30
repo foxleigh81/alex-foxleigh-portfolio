@@ -1,29 +1,28 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var GraphQLString = require('graphql').GraphQLString
-var BrandsType = require('../../types/brands')
-var BrandsModel = require('../../../models/brands')
+import { GraphQLNonNull, GraphQLString } from 'graphql'
+import { brandsType, brandsInputType } from '../../types/brands'
+import BrandsModel from '../../../models/brands'
 
-exports.update = {
-  type: BrandsType.brandsType,
+export default {
+  type: brandsType,
   description: 'Update a brand',
   args: {
     id: {
       name: 'id',
       type: new GraphQLNonNull(GraphQLString)
     },
-    brandsUpdate: { type: BrandsType.brandsInputType }
+    brandsUpdate: { type: brandsInputType }
   },
   resolve(root, { id, brandsUpdate }) {
     return BrandsModel.findByIdAndUpdate(
       id,
       {
-        name: brandsType.name,
-        description: brandsType.description,
-        logo_url: brandsType.logo_url,
-        bg_url: brandsType.bg_url,
-        cta_url: brandsType.cta_url,
-        class: brandsType.class,
-        active: brandsType.active
+        name: brandsUpdate.name,
+        description: brandsUpdate.description,
+        logo_url: brandsUpdate.logo_url,
+        bg_url: brandsUpdate.bg_url,
+        cta_url: brandsUpdate.cta_url,
+        class: brandsUpdate.class,
+        active: brandsUpdate.active
       },
       { new: true }
     ).exec()

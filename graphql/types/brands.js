@@ -1,13 +1,6 @@
-var GraphQLObjectType = require('graphql').GraphQLObjectType
-var GraphQLInputObjectType = require('graphql').GraphQLInputObjectType
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var GraphQLBoolean = require('graphql').GraphQLBoolean
-var GraphQLList = require('graphql').GraphQLList
-var GraphQLID = require('graphql').GraphQLID
-var GraphQLString = require('graphql').GraphQLString
-var GraphQLInt = require('graphql').GraphQLInt
+import { GraphQLObjectType, GraphQLInputObjectType, GraphQLNonNull, GraphQLBoolean, GraphQLList, GraphQLID, GraphQLString, GraphQLInt } from 'graphql'
 
-var dataShape = {
+const dataShape = {
   name: {
     type: GraphQLString,
     description: 'The name of the skill'
@@ -39,13 +32,15 @@ var dataShape = {
 }
 
 // Brands Type
-exports.brandsType = new GraphQLObjectType({
+const brandsType = new GraphQLObjectType({
   name: 'brands',
   fields: () => dataShape
 })
 
 // Brands Input Type
-exports.brandsInputType = new GraphQLInputObjectType({
+const brandsInputType = new GraphQLInputObjectType({
   name: 'brandsInputType',
   fields: () => dataShape
 })
+
+export { brandsType, brandsInputType }

@@ -1,13 +1,12 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var GraphQLString = require('graphql').GraphQLString
-var LangType = require('../../types/lang')
-var LangModel = require('../../../models/lang')
+import { GraphQLNonNull, GraphQLString } from 'graphql'
+import { langType, langInputType } from '../../types/lang'
+import LangModel from '../../../models/lang'
 
-exports.update = {
-  type: LangType.langType,
+export default {
+  type: langType,
   description: 'Update a language item',
   args: {
-    langUpdate: { type: LangType.langInputType }
+    langUpdate: { type: langInputType }
   },
   resolve(root, { langUpdate }) {
     return LangModel.findOneAndUpdate(

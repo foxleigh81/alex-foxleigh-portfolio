@@ -1,17 +1,16 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var GraphQLString = require('graphql').GraphQLString
-var SkillsType = require('../../types/skills')
-var SkillsModel = require('../../../models/skills')
+import { GraphQLNonNull, GraphQLString } from 'graphql'
+import { skillsType, skillsInputType } from '../../types/skills'
+import SkillsModel from '../../../models/skills'
 
-exports.update = {
-  type: SkillsType.skillsType,
+export default {
+  type: skillsType,
   description: 'Update a skill',
   args: {
     id: {
       name: 'id',
       type: new GraphQLNonNull(GraphQLString)
     },
-    skillsUpdate: { type: SkillsType.skillsInputType }
+    skillsUpdate: { type: skillsInputType }
   },
   resolve(root, { id, skillsUpdate }) {
     return SkillsModel.findByIdAndUpdate(

@@ -1,7 +1,6 @@
-var GraphQLObjectType = require('graphql').GraphQLObjectType
-var GraphQLString = require('graphql').GraphQLString
+import { GraphQLObjectType, GraphQLString } from 'graphql'
 
-var dataShape = {
+const dataShape = {
   name: {
     type: GraphQLString,
     description: 'The name of the component'
@@ -13,7 +12,7 @@ var dataShape = {
 }
 
 // Component Type
-exports.componentType = new GraphQLObjectType({
+export const componentType = new GraphQLObjectType({
   name: 'component',
   fields: () => dataShape
 })

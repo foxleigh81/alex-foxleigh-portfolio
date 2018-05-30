@@ -1,13 +1,6 @@
-var GraphQLObjectType = require('graphql').GraphQLObjectType
-var GraphQLInputObjectType = require('graphql').GraphQLInputObjectType
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var GraphQLBoolean = require('graphql').GraphQLBoolean
-var GraphQLList = require('graphql').GraphQLList
-var GraphQLID = require('graphql').GraphQLID
-var GraphQLString = require('graphql').GraphQLString
-var GraphQLInt = require('graphql').GraphQLInt
+import { GraphQLObjectType, GraphQLInputObjectType, GraphQLNonNull, GraphQLBoolean, GraphQLList, GraphQLID, GraphQLString, GraphQLInt } from 'graphql'
 
-var childDataShape = {
+const childDataShape = {
   mobileMenuLabel: {
     type: GraphQLString,
     description: 'The alt text for the mobile menu icon'
@@ -19,19 +12,19 @@ var childDataShape = {
 }
 
 // Lang definitions Type
-var definitionsType = new GraphQLObjectType({
+const definitionsType = new GraphQLObjectType({
   name: 'definitions',
   fields: () => childDataShape
 })
 
-var definitionsInputType = new GraphQLInputObjectType({
+const definitionsInputType = new GraphQLInputObjectType({
   name: 'definitionsInputType',
   fields: () => childDataShape
 })
 
 // REFACTOR: Too many data shapes and not very DRY.
 
-var dataShape = {
+const dataShape = {
   language: {
     type: GraphQLString,
     description: 'The language being used (in `ISO 639-1` format (e.g. `en-gb`)'
@@ -42,7 +35,7 @@ var dataShape = {
   }
 }
 
-var dataShapeInput = {
+const dataShapeInput = {
   language: {
     type: GraphQLString,
     description: 'The language being used (in `ISO 639-1` format (e.g. `en-gb`)'
@@ -54,18 +47,18 @@ var dataShapeInput = {
 }
 
 // Lang Type
-var langType = new GraphQLObjectType({
+const langType = new GraphQLObjectType({
   name: 'lang',
   fields: () => dataShape
 })
 
 // Lang Input Type
-var langInputType = new GraphQLInputObjectType({
+const langInputType = new GraphQLInputObjectType({
   name: 'langInputType',
   fields: () => dataShapeInput
 })
 
-module.exports = {
+export {
   definitionsType,
   definitionsInputType,
   langType,

@@ -1,12 +1,14 @@
-var GraphQLObjectType = require('graphql').GraphQLObjectType
-var GraphQLInputObjectType = require('graphql').GraphQLInputObjectType
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var GraphQLBoolean = require('graphql').GraphQLBoolean
-var GraphQLList = require('graphql').GraphQLList
-var GraphQLID = require('graphql').GraphQLID
-var GraphQLString = require('graphql').GraphQLString
+import { 
+  GraphQLObjectType,
+  GraphQLInputObjectType,
+  GraphQLNonNull,
+  GraphQLBoolean,
+  GraphQLList,
+  GraphQLID,
+  GraphQLString } from 'graphql'
 
-var dataShape = {
+
+const dataShape = {
   status: {
     type: GraphQLString,
     description: 'My current contracting status, can be anything but is usually `available`, `unavailable` or `taking a break`'
@@ -26,13 +28,16 @@ var dataShape = {
 }
 
 // Config Type
-exports.configType = new GraphQLObjectType({
+const configType = new GraphQLObjectType({
   name: 'config',
   fields: () => dataShape
 })
 
 // Config Input Type
-exports.configInputType = new GraphQLInputObjectType({
+const configInputType = new GraphQLInputObjectType({
   name: 'configInputType',
   fields: () => dataShape
 })
+
+
+export { configType, configInputType }

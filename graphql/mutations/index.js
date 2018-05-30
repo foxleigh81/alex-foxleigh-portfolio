@@ -1,18 +1,18 @@
-var GraphQLObjectType = require('graphql').GraphQLObjectType
+import { GraphQLObjectType } from 'graphql'
 
-var config = require('./config')
-var lang = require('./lang')
-var skills = require('./skills')
-var brands = require('./brands')
-var socialNetworks = require('./social-networks')
+import updateConfig from './config'
+import updateLang from './lang'
+import skills from './skills'
+import brands from './brands'
+import socialNetworks from './social-networks'
 
-exports.mutationType = new GraphQLObjectType({
+export default new GraphQLObjectType({
   name: 'Mutation',
   description: 'Root mutation',
-  fields: function () {
+  fields: () => {
     return {
-      updateConfig: config.update,
-      updateLang: lang.update,
+      updateConfig,
+      updateLang,
       addSkill: skills.add,
       updateSkill: skills.update,
       removeSkill: skills.remove,
@@ -21,7 +21,7 @@ exports.mutationType = new GraphQLObjectType({
       removeBrand: brands.remove,
       addSocialNetwork: socialNetworks.add,
       updateSocialNetwork: socialNetworks.update,
-      removeSocialNetwork: socialNetworks.remove,
+      removeSocialNetwork: socialNetworks.remove
     }
   }
 })

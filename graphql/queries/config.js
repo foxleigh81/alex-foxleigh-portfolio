@@ -1,11 +1,11 @@
-var GraphQLList = require('graphql').GraphQLList;
-var ConfigModel = require('../../models/config');
-var ConfigType = require('../types/config').configType;
+import { GraphQLList } from 'graphql'
+import ConfigModel from '../../models/config'
+import { configType as ConfigType } from '../types/config'
 
 // Query
-exports.queryType = {
+export default {
   type: new GraphQLList(ConfigType),
-  description: 'The configuration for the home \'page\'',
+  description: "The configuration for the home 'page'",
   resolve: function () {
     const config = ConfigModel.find()
     if (!config) {

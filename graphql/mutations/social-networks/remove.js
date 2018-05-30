@@ -1,10 +1,9 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var GraphQLString = require('graphql').GraphQLString
-var SocialNetworksType = require('../../types/social-networks')
-var SocialNetworksModel = require('../../../models/social-networks')
+import { GraphQLNonNull, GraphQLString } from 'graphql'
+import { socialNetworksType } from '../../types/social-networks'
+import SocialNetworksModel from '../../../models/social-networks'
 
-exports.remove = {
-  type: SocialNetworksType.socialNetworksType,
+export default {
+  type: socialNetworksType,
   args: {
     id: {
       type: new GraphQLNonNull(GraphQLString)

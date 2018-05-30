@@ -1,17 +1,17 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+import mongoose from 'mongoose'
+const Schema = mongoose.Schema
 
 // Cache the collection name
-var c = 'Lang'
+const c = 'Lang'
 
-var DefinitionsSchema = new Schema({
+const DefinitionsSchema = new Schema({
   //add children
   'mobileMenuLabel' : String,
   'copyright' : String
 })
 
 // Language schema
-var LangSchema = new Schema({
+const LangSchema = new Schema({
   // Add children
   'language': {
     type: String,
@@ -21,5 +21,4 @@ var LangSchema = new Schema({
 })
 
 // Export the model and specify the collection name to avoid pluralisation (hence the repeated 'c' variable)
-var Model = mongoose.model(c, LangSchema, c)
-module.exports = Model
+export default mongoose.model(c, LangSchema, c)

@@ -1,11 +1,7 @@
-var GraphQLObjectType = require('graphql').GraphQLObjectType;
+import { GraphQLObjectType } from 'graphql'
 
-var add = require('./add').add;
-var remove = require('./remove').remove;
-var update = require('./update').update;
+import add from './add'
+import remove from './remove'
+import update from './update'
 
-module.exports = {
- add,
- remove,
- update 
-}
+export default { add, remove, update}

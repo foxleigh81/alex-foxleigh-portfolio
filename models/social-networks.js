@@ -1,10 +1,10 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+import mongoose from 'mongoose'
+const Schema = mongoose.Schema;
 
 // Cache the collection name
-var c = 'SocialNetworks'
+const c = 'SocialNetworks'
 
-var SocialNetworks = new Schema({
+const SocialNetworks = new Schema({
   name: String,
   icon_class: String,
   username: String,
@@ -13,7 +13,5 @@ var SocialNetworks = new Schema({
   active: Boolean
 })
 
-
 // Export the model and specify the collection name to avoid pluralisation (hence the repeated 'c' variable)
-var Model = mongoose.model(c, SocialNetworks, c)
-module.exports = Model
+export default mongoose.model(c, SocialNetworks, c)

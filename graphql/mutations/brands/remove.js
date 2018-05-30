@@ -1,10 +1,9 @@
-var GraphQLNonNull = require('graphql').GraphQLNonNull
-var GraphQLString = require('graphql').GraphQLString
-var BrandsType = require('../../types/brands')
-var BrandsModel = require('../../../models/brands')
+import { GraphQLNonNull, GraphQLString } from 'graphql'
+import { brandsType } from '../../types/brands'
+import BrandsModel from '../../../models/brands'
 
-exports.remove = {
-  type: BrandsType.brandsType,
+export default {
+  type: brandsType,
   args: {
     id: {
       type: new GraphQLNonNull(GraphQLString)
