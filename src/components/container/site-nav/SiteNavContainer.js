@@ -1,20 +1,22 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
 import SiteNav from '../../presentational/SiteNav'
 
-class SiteNavContainer extends Component {
-  constructor () {
-    super(props)
+const SiteNavContainer = ({ data: { pages, refetch } }) => (
+  <nav>
+    <ul>
+      {pages && pages.filter(page => page.in_nav).map((page, index) => <SiteNav key={index} name={page.name} slug={page.slug} />)}
+    </ul>
+  </nav>
+)
+
+export default graphql(gql`
+  query NavigationQuery {
+    pages {
+     name, slug, in_nav
+    }
   }
-  render () {
-    return (
-      <nav>
-        <ul>
-          <SiteNav />
-        </ul>
-      </nav>
-    )
-  }
-}
-export default SiteNavContainer
+`)(SiteNavContainer)
