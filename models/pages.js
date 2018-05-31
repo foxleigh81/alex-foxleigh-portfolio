@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 // Cache the collection name
 const c = 'Pages'
 
-// Skills schema
-const BrandsSchema = new Schema({
+// Pages schema
+const PagesSchema = new Schema({
   // Add children
   name: {
     type: String,
@@ -27,7 +27,7 @@ const BrandsSchema = new Schema({
     type: String
   },
   class: {
-    type: String,
+    type: String
   },
   in_nav: {
     type: Boolean,
@@ -42,13 +42,13 @@ const BrandsSchema = new Schema({
     required: true
   },
   subtitle: {
-    type: String,
+    type: String
   },
   body_copy: {
-    type: String,
+    type: String
   },
   components: {
-    type: Object,
+    type: Object
   }
 })
 

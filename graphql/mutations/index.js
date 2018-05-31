@@ -5,6 +5,7 @@ import updateLang from './lang'
 import skills from './skills'
 import brands from './brands'
 import socialNetworks from './social-networks'
+import pages from './pages'
 
 export default new GraphQLObjectType({
   name: 'Mutation',
@@ -20,6 +21,9 @@ export default new GraphQLObjectType({
     removeBrand: brands.remove,
     addSocialNetwork: socialNetworks.add,
     updateSocialNetwork: socialNetworks.update,
-    removeSocialNetwork: socialNetworks.remove
+    removeSocialNetwork: socialNetworks.remove,
+    addPage: pages.add,
+    updatePage: pages.update,
+    removePage: pages.remove
   })
 })
