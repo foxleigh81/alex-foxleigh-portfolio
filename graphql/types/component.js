@@ -5,9 +5,13 @@ const dataShape = {
     type: GraphQLString,
     description: 'The name of the component'
   },
-  data: {
+  props: {
     type: new GraphQLObjectType,
-    description: 'The data passed to the component'
+    description: 'The props passed to the component'
+  },
+  path: {
+    type: GraphQLString,
+    description: 'The relative path to the component to load (omit the extension).'
   }
 }
 

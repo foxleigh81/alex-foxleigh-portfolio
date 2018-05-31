@@ -1,7 +1,6 @@
 import { GraphQLList } from 'graphql'
 import LangModel from '../../models/lang'
 import { langType as LangType } from '../types/lang'
-import { __importDefault } from 'tslib'
 
 // Query
 export default {

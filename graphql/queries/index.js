@@ -7,6 +7,7 @@ import socialNetworksQuery from './social-networks'
 import skillsQuery from './skills'
 import brandsQuery from './brands'
 import langQuery from './lang'
+import pagesQuery from './pages'
 
 // Query
 export default new GraphQLObjectType({
@@ -18,6 +19,7 @@ export default new GraphQLObjectType({
     social_networks: socialNetworksQuery,
     skills: skillsQuery,
     brands: brandsQuery,
-    lang: langQuery
+    lang: langQuery,
+    pages: pagesQuery
   })
 })
