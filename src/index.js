@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import { ApolloProvider } from 'react-apollo'
+import client from './lib/apolloClient'
 
 // Import components
 import SiteHeader from './components/presentational/SiteHeader'
@@ -10,12 +12,14 @@ class App extends Component {
   }
   render () {
     return (
-      <div>
-        <SiteHeader />
-        <main>
-          <h1>Main content goes here</h1>
-        </main>
-      </div>
+      <ApolloProvider client={client}>
+        <div>
+          <SiteHeader />
+          <main>
+            <h1>Main content goes here</h1>
+          </main>
+        </div>
+      </ApolloProvider>
     )
   }
 }
