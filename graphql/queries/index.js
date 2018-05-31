@@ -12,14 +12,12 @@ import langQuery from './lang'
 export default new GraphQLObjectType({
   name: 'Query',
   description: 'Root Query',
-  fields: () => {
-    return {
-      config: configQuery,
-      contact_details: contactDetailsQuery,
-      social_networks: socialNetworksQuery,
-      skills: skillsQuery,
-      brands: brandsQuery,
-      lang: langQuery
-    }
-  }
+  fields: () => ({
+    config: configQuery,
+    contact_details: contactDetailsQuery,
+    social_networks: socialNetworksQuery,
+    skills: skillsQuery,
+    brands: brandsQuery,
+    lang: langQuery
+  })
 })
