@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+// @flow
+
+import React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 

@@ -1,16 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+// @flow
 
-const SiteNav = ({ name, slug, in_nav }) => (
+import React from 'react'
+
+type PropTypes = {
+  name: string,
+  slug: string
+}
+
+const SiteNav = ({ name, slug }: PropTypes) => (
   <li>
     <a href={slug}>
       {name}
     </a>
   </li>
 )
-SiteNav.propTypes = {
-  name: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
-  in_nav: PropTypes.bool
-}
 export default SiteNav
