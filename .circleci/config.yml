@@ -24,11 +24,16 @@ jobs:
           paths:
             - ./node_modules
       - run: 
-          name: Running e2e tests
-          command: yarn test  
-      - run: 
           name: Creating a production build
           command: yarn build
-      - persist_to_workspace:
-          root: .
-          paths: dist
+      - run: mkdir test-reports
+      - run:
+          name: Download Selenium
+          command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+      - run:
+          name: Start Selenium
+          command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
+          background: true
+      - run: 
+          name: Running e2e tests
+          command: yarn test  
