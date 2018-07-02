@@ -17,17 +17,17 @@ jobs:
       - restore_cache:
           key: v1-yarn-{{ checksum "yarn.lock" }}
       - run: 
-          name: Install Node packages
+          name: Installing Node packages
           command: yarn install
       - save_cache:
           key: v1-yarn-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
       - run: 
-          name: Run e2e tests
+          name: Running e2e tests
           command: yarn test  
       - run: 
-          name: Create a production build
+          name: Creating a production build
           command: yarn build
       - persist_to_workspace:
           root: .
