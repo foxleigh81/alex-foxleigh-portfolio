@@ -1,5 +1,8 @@
 {
   "name": "alex-foxleigh-portfolio",
+  "engines" : { 
+    "node" : ">=9.0.0" 
+  },
   "version": "4.0.0",
   "author": "Alex Foxleigh",
   "description": "My portfolio site's holding page, built with Vue",

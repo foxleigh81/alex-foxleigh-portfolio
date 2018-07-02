@@ -20,7 +20,7 @@ jobs:
           command: curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash - && sudo apt-get install -y nodejs
       - run: 
           name: Installing Node packages
-          command: yarn install
+          command: yarn install --ignore-engines
       - save_cache:
           key: v1-yarn-{{ checksum "yarn.lock" }}
           paths:
