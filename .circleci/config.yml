@@ -7,6 +7,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:8.11.2
+      - image: selenium/standalone-chrome:latest
     parallelism: 1
     working_directory: ~/repo
     steps:
@@ -15,13 +16,19 @@ jobs:
           at: ~/repo
       - restore_cache:
           key: v1-yarn-{{ checksum "yarn.lock" }}
-      - run: yarn install
+      - run: 
+        name: Install Node packages
+        command: yarn install
       - save_cache:
           key: v1-yarn-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
-      - run: yarn test  
-      - run: yarn build
+      - run: 
+        name: Run e2e tests
+        command: yarn test  
+      - run: 
+        name: Create a production build
+        command: yarn build
       - persist_to_workspace:
           root: .
           paths: dist
