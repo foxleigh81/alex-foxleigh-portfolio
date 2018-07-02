@@ -29,4 +29,4 @@ jobs:
       - run: mkdir test-assets
       - run: 
           name: Running e2e tests
-          command: yarn test  
+          command: ./node_modules/.bin/magellan --local_browsers chrome
