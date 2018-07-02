@@ -33,8 +33,6 @@ jobs:
       - run: 
           name: Creating a production build
           command: yarn build
-      - run: mkdir test-reports
-      - run: mkdir test-assets
       - run: 
           name: Running e2e tests
           command: ./node_modules/.bin/magellan --local_browsers chrome
@@ -42,4 +40,4 @@ jobs:
           path: /tests/e2e/assets
           destination: prefix
       - store_test_results:
-          path: tests/e2e/reports
+          path: /tests/e2e/reports
