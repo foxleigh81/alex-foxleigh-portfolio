@@ -2024,7 +2024,7 @@ chrome-trace-event@^1.0.0:
   dependencies:
     tslib "^1.9.0"
 
-chromedriver@^2.38.3:
+chromedriver@^2.38.3, chromedriver@^2.40.0:
   version "2.40.0"
   resolved "https://registry.yarnpkg.com/chromedriver/-/chromedriver-2.40.0.tgz#2a94cc68abe3b34a3c43b28761b345bd19387ef6"
   dependencies:
@@ -7280,6 +7280,10 @@ select-hose@^2.0.0:
 selenium-server@^3.12.0:
   version "3.13.0"
   resolved "https://registry.yarnpkg.com/selenium-server/-/selenium-server-3.13.0.tgz#daecaa9a684d1d98e799fddd2d670fbe79818d45"
+
+selenium-standalone-jar@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/selenium-standalone-jar/-/selenium-standalone-jar-3.0.1.tgz#c770f5e455a0e22b616cc118228a02ca5ca75d0c"
 
 selfsigned@^1.9.1:
   version "1.10.3"

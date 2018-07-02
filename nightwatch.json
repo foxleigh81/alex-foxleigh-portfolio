@@ -1,0 +1,25 @@
+{
+  "selenium" : {
+    "start_process" : true,
+    "server_path" : "./node_modules/selenium-standalone-jar/bin/selenium-server-standalone-3.0.1.jar",
+    "log_path" : "test-reports",
+    "port" : 4444,
+    "screenshots" : {
+      "enabled" : true,
+      "path" : "test-assets"
+    },
+    "cli_args" : {
+      "webdriver.chrome.driver" : "./node_modules/chromedriver/bin/chromedriver"
+    }
+  },
+  "test_settings" : {
+    "default" : {
+      "globals" : {
+        "abortOnAssertionFailure" : false,
+        "waitForConditionPollInterval" : 300,
+        "waitForConditionTimeout" : 10000,
+        "retryAssertionTimeout": 5000 
+      }
+    }
+  }
+}
