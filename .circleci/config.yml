@@ -17,7 +17,7 @@ jobs:
           key: v1-yarn-{{ checksum "yarn.lock" }}
       - run:
           name: Install environment dependencies
-          command: curl -sL https://deb.nodesource.com/setup_9.x | bash - && apt-get install -y nodejs
+          command: curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash - && apt-get install -y nodejs
       - run: 
           name: Installing Node packages
           command: yarn install
