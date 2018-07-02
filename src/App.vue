@@ -36,7 +36,6 @@ body
   width: 100%
   background-color #9B9B9B
   font-family 'azo-sans-web', Helvetica, Arial, sans-serif
-  
 
 #app
   -webkit-font-smoothing antialiased
