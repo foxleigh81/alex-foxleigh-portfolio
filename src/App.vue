@@ -2,7 +2,7 @@
   <div id="app">
     <MiniMe />
     <Greeting />
-    <Status status="unavailable" availableOn="2019-01-21" />
+    <Status status="unavailable" availableOn="2019-05-01" />
   </div>
 </template>
 
