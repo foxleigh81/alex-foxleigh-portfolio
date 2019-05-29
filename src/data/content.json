@@ -1,0 +1,53 @@
+[
+  {
+    "page": "intro",
+    "entry": "/",
+    "titles": {
+      "morning" : "Good morning!",
+      "afternoon" : "Good afternoon!",
+      "evening": "Good evening!"
+    },
+    "subtitle": "I'm Alex, I like to make things",
+    "mini_me": "red-shirt-wave",
+    "intros" : {
+      "available": "I mainly build websites, which I can do for you too. If you wish to hire me, you’re in luck, I’m currently available for remote work.\nCheck out my site and if you like what you see, get in touch!",
+      "unavailable-lt": "I'm actually on a project at the moment but I may still be avilable for smaller projects.",
+      "unavailable-st": "I'm actually on a project at the moment but I may still be avilable for smaller projects. I should be available again",
+      "break" : "I'm taking a short break from project work at the moment. Keep an eye on this site and LinkedIn for the net time I am available",
+      "holiday" : "I'm currently taking a well-earned break, I should be available again in"
+    }
+  },
+  {
+    "page": "About Me",
+    "entry": "/about-me",
+    "title": "A little bit about me",
+    "content" : "about_me.md"
+  },
+  {
+    "page": "Brands",
+    "entry": "/brands",
+    "title": "I've worked for some great brands...",
+    "mini_me": "purple-shirt-present",
+    "featured_brand_title": "Case studies...",
+    "other_brand_title": "A few other brands I've worked with..."
+  },
+  {
+    "page": "Feedback",
+    "entry": "/feedback",
+    "title": "And got some great feedback",
+    "mini_me": "white-shirt-blush"
+  },
+  {
+    "page": "What I do",
+    "entry": "/what-i-do",
+    "title": "What I can do",
+    "mini_me": "blue-shirt-desk",
+    "content": "what-i-do.md"
+  },
+  {
+    "page": "Contact",
+    "entry": "/contact",
+    "title": "Get in touch!",
+    "mini_me": "black-shirt-phone"
+  }
+]

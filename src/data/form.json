@@ -1,0 +1,38 @@
+[
+  {
+    "type": "text",
+    "name": "name",
+    "label": "Hi, My name is",
+    "placeholder": "Please enter your name",
+    "validation": "A-Za-z"
+  },
+  {
+    "type": "radio_group",
+    "name": "and_i",
+    "label": "And I",
+    "options" : [
+      {
+        "label": "Am a spam bot / didnt read this form thoroughly",
+        "value" : "chump"
+      },
+      {
+        "label": "Am I recruiter who has a potential contract role for you",
+        "value" : "prospect - recruiter"
+      },
+      {
+        "label": "Am someone who would be interested in working with you",
+        "value" : "prospect - client/partner"
+      },
+      {
+        "label": "Will always love youuuu....",
+        "value" : "Whitney Houston"
+      }
+    ]
+  },
+  {
+    "type": "textarea",
+    "name": "details",
+    "label": "Here are my contact details and some more information",
+    "placeholder": "Enter anything you like here but if you don't put your details in, I can't reach you."
+  }
+]
