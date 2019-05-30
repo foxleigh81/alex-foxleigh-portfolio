@@ -11,9 +11,9 @@
     "mini_me": "red-shirt-wave",
     "intros" : {
       "available": "I mainly build websites, which I can do for you too. If you wish to hire me, you’re in luck, I’m currently available for remote work.\nCheck out my site and if you like what you see, get in touch!",
-      "unavailable-lt": "I'm actually on a project at the moment but I may still be avilable for smaller projects.",
-      "unavailable-st": "I'm actually on a project at the moment but I may still be avilable for smaller projects. I should be available again",
-      "break" : "I'm taking a short break from project work at the moment. Keep an eye on this site and LinkedIn for the net time I am available",
+      "unavailable-lt": "I'm actually on a project at the moment but I may still be available for smaller projects.",
+      "unavailable-st": "I'm actually on a project at the moment but I may still be available for smaller projects. I should be available again",
+      "break" : "I'm taking a short break from project work at the moment. Keep an eye on this site and LinkedIn for the next time I am available",
       "holiday" : "I'm currently taking a well-earned break, I should be available again in"
     }
   },
