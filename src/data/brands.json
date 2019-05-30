@@ -5,15 +5,19 @@
     "description": "",
     "example_screenshot": "",
     "example_url" : "",
-    "featured": true
+    "featured": true,
+    "years": [2018, 2019],
+    "tech" : ["react", "vue", "node", "graphql", "gatsby", "nuxt", "html", "scss", "webpack", "enzyme", "jest", "vue-test-utils", "circleci", "codeclimate"]
   },
   {
-    "name": "B&Q",
+    "name": "The Ministry of Justice",
     "icon_url" : "",
     "description": "",
     "example_screenshot": "",
     "example_url" : "",
-    "featured": true
+    "featured": true,
+    "years": [2016, 2017],
+    "tech": ["html", "scss", "react", "nunjucks", "wordpress", "node", "webpack"]
   },
   {
     "name": "SSE",
@@ -21,7 +25,9 @@
     "description": "",
     "example_screenshot": "",
     "example_url" : "",
-    "featured": true
+    "featured": true,
+    "years": [2014],
+    "tech": ["html", "scss", "jQuery", "codekit", "node"]
   },
   {
     "name": "Unilever",
@@ -29,10 +35,12 @@
     "description": "",
     "example_screenshot": "",
     "example_url" : "",
-    "featured": true
+    "featured": true,
+    "years" : [2015, 2016],
+    "tech" : ["html", "scss", "nunjucks", "angular", "webpack", "node"]
   },
   {
-    "name": "The Ministry of Justice",
+    "name": "B&Q",
     "featured": false
   },
   {
