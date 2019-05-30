@@ -22,3 +22,5 @@ assignees: foxleigh81
 ## Definition of Done
 
 [A bulleted list of agreed points which need to be completed before the issue can be considered closed]
+- Tests pass
+- Component is fully responsive and accessible
