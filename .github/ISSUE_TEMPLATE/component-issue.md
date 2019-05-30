@@ -9,18 +9,30 @@ assignees: foxleigh81
 
 ## Overview
 
-[A brief description of the issue]
+A brief description of the issue
 
 ## Type
 
-[Either `presentational` or `container`]
+presentational / container
+
+## Variants
+
+List out any variants here
 
 ## Example
 
-[An example of the issue, either as code or a screenshot (or both if that would be helpful)]
+An example of the issue, either as code or a screenshot (or both if that would be helpful)
 
 ## Definition of Done
 
-[A bulleted list of agreed points which need to be completed before the issue can be considered closed]
+A bulleted list of agreed points which need to be completed before the issue can be considered closed, the ones below are optional defaults
+
+- Contains the appropriate props from the Props table
+- Implements all variants
 - Tests pass
-- Component is fully responsive and accessible
+- The component is fully responsive and accessible
+
+## Props
+
+Prop Name | Type | Required | default | description
+--- | --- | --- | --- | ---
