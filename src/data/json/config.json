@@ -26,8 +26,23 @@
       "active": true
     }
   ],
-  "cv_link": "",
-  "blog_link": "https://foxleigh.me",
+  "primary_nav" : [
+    {
+      "name": "Download Latest CV",
+      "url": "",
+      "classes" : ["btn-white"]
+    },
+    {
+      "name": "Blog",
+      "url": "alex.foxleigh.me",
+      "classes" : []
+    },
+    {
+      "name": "Get in touch",
+      "url": "#contact",
+      "classes" : []
+    }
+  ],
   "phone_number": "07000 000 000",
   "email": "hireme@alexfoxleigh.com"
 }
