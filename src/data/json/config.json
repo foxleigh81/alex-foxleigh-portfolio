@@ -6,23 +6,27 @@
   },
   "social_networks": [
     {
-      "name": "github",
+      "name": "Github",
       "url": "https://github.com/foxleigh81",
+      "classes" : ["github"],
       "active": true
     },
     {
-      "name": "facebook",
+      "name": "Facebook",
       "url": "https://www.facebook.com/foxleigh81",
+      "classes" : ["facebook"],
       "active": true
     },
     {
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/alexfoxleigh/",
+      "classes" : ["linkedin"],
       "active": true
     },
     {
       "name": "Instagram",
       "url": "http://instagram.com/foxleigh81/",
+      "classes" : ["instagram"],
       "active": true
     }
   ],
@@ -30,17 +34,20 @@
     {
       "name": "Download Latest CV",
       "url": "",
-      "classes" : ["btn-white"]
+      "classes" : ["btn-white"],
+      "active": true
     },
     {
       "name": "Blog",
       "url": "alex.foxleigh.me",
-      "classes" : []
+      "classes" : [],
+      "active": true
     },
     {
       "name": "Get in touch",
       "url": "#contact",
-      "classes" : []
+      "classes" : [],
+      "active": true
     }
   ],
   "phone_number": "07000 000 000",

@@ -2,7 +2,10 @@ import React from 'react';
 import './styles.css';
 import { Store } from '../../../data/Store';
 
-function App({children}) {
+import Segment from '../Segment';
+const NavBar = React.lazy(() => import('../NavBar'))
+
+function App() {
   const { state, dispatch } = React.useContext(Store);
   const fetchDataAction = async () => {
     const data = await fetch('/.netlify/functions/config');
@@ -12,14 +15,35 @@ function App({children}) {
       payload: dataJSON.data
     });
   };
+
   React.useEffect(() => {
     state.config.length === 0 && fetchDataAction();
   });
+
+  const props = {
+    config: state.config
+  }
+
+
   return (
-    <div className="App">
-      {console.log(state)}
-      {children}
-    </div>
+    <React.Fragment>
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <div className="App">
+          <NavBar {...props.config}/>
+          <main>
+            <Segment>
+              <header>
+                <h1>Good Morning</h1>
+                <h2>I'm Alex, I like to make things</h2>
+              </header>
+              <div className="availability">
+                <p>If you wish to hire me, you're in luck, I'm <strong>currently available</strong> for remote projects</p>
+              </div>
+            </Segment>
+          </main>
+        </div>
+      </React.Suspense>
+    </React.Fragment>
   );
 }
 
