@@ -2,8 +2,9 @@ import React from 'react';
 import './styles.css';
 import { Store } from '../../../data/Store';
 
-import Segment from '../Segment';
+
 const NavBar = React.lazy(() => import('../NavBar'))
+const Segment = React.lazy(() => import('../Segment'))
 
 const fetchAction = async (name, dispatch) => {
   const data = await fetch(`/.netlify/functions/${name.toLowerCase()}`);
