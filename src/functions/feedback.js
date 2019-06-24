@@ -1,4 +1,4 @@
-const data = require('../data/json/brands.json')
+const data = require('../data/json/feedback.json')
 
 exports.handler = function(event, context, callback) {
   callback(null, {

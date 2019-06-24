@@ -5,16 +5,23 @@ export const Store = React.createContext();
 const initialState = {
   config: [],
   brands: [],
-  content: [],
+  segments: [],
   feedback: [],
   form: [],
-  markdown: [],
 }
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'FETCH_DATA':
+    case 'FETCH_CONFIG':
       return { ...state, config: action.payload };
+    case 'FETCH_BRANDS':
+      return { ...state, brands: action.payload };
+    case 'FETCH_SEGMENTS':
+      return { ...state, segments: action.payload };
+    case 'FETCH_FEEDBACK':
+      return { ...state, feedback: action.payload };
+    case 'FETCH_FORM':
+      return { ...state, form: action.payload };
     default:
       return state;
   }
