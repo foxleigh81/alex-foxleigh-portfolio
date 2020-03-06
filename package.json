@@ -15,7 +15,7 @@
     "snyk": "^1.258.2"
   },
   "scripts": {
-    "start": "yarn start --scope @afp/client",
+    "start": "lerna run start --scope @afp/client",
     "dev" : "yarn component-dev & yarn start",
     "develop" : "yarn component-dev & yarn storybook & yarn start",
     "test": "lerna run test",
