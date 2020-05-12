@@ -7,7 +7,7 @@ import Props from './types/props'
 import styles from './styles.module.scss'
 
 /* Render component */
-export const Home: React.FunctionComponent<Props> = ({ name, colour }: Props) =>
+export const Home: React.FC<Props> = ({ name, colour }: Props) =>
   <div className={styles[colour]}>
     This is an example component, the name provided to it was {name}
   </div>
