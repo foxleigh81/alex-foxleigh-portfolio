@@ -8,6 +8,7 @@ module.exports = {
         '@storybook/addon-knobs/register',
         '@storybook/addon-viewport/register',
         '@storybook/addon-backgrounds/register',
+        'storybook-svgr-react-component',
     ],
     webpackFinal: async config => {
         config.module.rules.push(
@@ -35,6 +36,18 @@ module.exports = {
               loader: 'markdown-loader',
             }
           ]
+        },
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                outputPath: 'static/assets/',
+                publicPath: 'static/assets/'
+              }
+            },
+          ],
         },
         {
           test: /\.module.scss$/,
