@@ -28,5 +28,5 @@ const minimes = [
 
 const miniMeKnobs: Function = (selected: string) => select('Choose a Mini Me', minimes, selected, 'options' )
 
-export const Default: React.FC = () => <div style={{height: '400px'}} ><MiniMe name={miniMeKnobs('at-desk')}/></div>
+export const Default: React.FC = () => <div style={{height: '400px'}} ><MiniMe name={miniMeKnobs('at-desk')} position="none"/></div>
 

@@ -1,7 +1,10 @@
+@use '@afp/themes' as vars;
+
 .block {
   color: white;
   font-weight: bold;
   overflow: hidden;
+  padding: vars.$segmentPadding; 
 }
 
 .sunrise {
