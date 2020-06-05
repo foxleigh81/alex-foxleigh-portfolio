@@ -1,5 +1,4 @@
 import React from 'react'
-
 // Import component files
 import Status from './index'
 import docs from './README.md'
@@ -17,5 +16,7 @@ export default {
   }
 }
 
-export const Default: React.FC = () => <Status status="available for work"/>
+export const Available: React.FC = () => <Status status='available' />
+export const Unavailable: React.FC = () => <Status status='unavailable' date="2/12/81" />
+export const OnHoliday: React.FC = () => <Status status='holiday' date="2/12/81" />
 
