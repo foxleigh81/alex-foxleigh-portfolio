@@ -50,7 +50,7 @@ module.exports = {
           ],
         },
         {
-          test: /\.module.scss$/,
+          test: /\.module.scss|scss$/,
           use: [
             require.resolve('style-loader'), 
             {
@@ -73,11 +73,18 @@ module.exports = {
                 options: {
                 // Prefer `dart-sass`
                 implementation: require('sass'),
+                sourceMap: false,
+                prependData: '@use "~@afp/themes";',
+                sassOptions: {
+                  outputStyle: 'expanded',
+                  indentWidth: 4,
+                },
               }
             }
           ],
           include: path.resolve(__dirname, '../'),
-        });
+        }
+        );
         config.resolve.extensions.push('.ts', '.tsx', '.md');
         return config;
       },
