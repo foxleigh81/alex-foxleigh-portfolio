@@ -22,13 +22,13 @@ export const Status: React.FC<Props> = ({ status, date }: Props) => {
     case 'unavailable':
         return (
           <div>
-            <p>I'm currently fully-booked. I expect have availability again on { prettyDate }</p>
+            <p>I'm currently fully-booked. {date && <>I expect have availability again on { prettyDate }</>}</p>
           </div>
         )
     case 'holiday':
       return (
         <div>
-          <p>I'm currently taking a well-deserved break. I should be available again on { prettyDate }</p>
+          <p>I'm currently taking a well-deserved break. {date && <>I should be available again on { prettyDate }</>}</p>
         </div>
       )
   }
