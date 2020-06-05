@@ -13,15 +13,22 @@ import salutation from './helpers/salutation'
 import MiniMe from '../mini-me'
 import Status from '../status'
 
-const { segment, lightLevel } = salutation()
 
 /* Render component */
-export const Welcome: React.FC<Props> = ({ status, minime }: Props) =>
-  <div className={cx(styles['block'], styles[lightLevel])}>
-    <h1>Good {capitalize(segment)}!</h1>
+export const Welcome: React.FC<Props> = ({ status, nextDate, minime, hour }: Props) => { 
+ const { segment, lightLevel } = salutation(hour || undefined)
+ return <div className={cx(styles['block'], styles[lightLevel])}>
+    <h1>{capitalize(segment)}</h1>
     <h2>I'm Alex, I like to make things</h2>
     <MiniMe name={minime} />
-    <Status status={status} />
+    <div style={{
+      position: 'absolute',
+      left: '5rem',
+      bottom: '8rem'
+    }}>
+      <Status status={status} date={nextDate} />
+    </div>
   </div>
+}
 
 export default Welcome
