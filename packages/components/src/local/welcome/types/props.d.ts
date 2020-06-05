@@ -1,10 +1,10 @@
 export default interface Props {
   /**
-   * The name of the thing
+   * My current availability status
    */
-  name: string
+  status: 'available' | 'unavailable' | 'holiday'
   /**
-   * The colour of the thing
+   * The mini-me to use
    */
-  colour: string
+  minime: 'available' | 'at-desk' | 'blushing' | 'skills' | 'phone' | 'smile'
 }

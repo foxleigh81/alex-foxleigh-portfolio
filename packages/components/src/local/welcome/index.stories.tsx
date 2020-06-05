@@ -17,5 +17,7 @@ export default {
   }
 }
 
-export const Default: React.FC = () => <Welcome name="test" colour="green"/>
+export const Available: React.FC = () => <Welcome status="available" minime="available" />
+export const Unavailable: React.FC = () => <Welcome status="unavailable" minime="at-desk" />
+export const OnHoliday: React.FC = () => <Welcome status="holiday" minime="smile" />
 

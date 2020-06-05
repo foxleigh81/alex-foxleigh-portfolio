@@ -1,4 +1,5 @@
 import React from 'react'
+import cx from 'classnames'
 
 /* Import Types */
 import Props from './types/props'
@@ -16,7 +17,7 @@ import { ReactComponent as Smile } from './images/smile.svg'
 import styles from './styles.module.scss'
 
 /* Render component */
-export const MiniMe: React.FC<Props> = ({ name }: Props) => {
+export const MiniMe: React.FC<Props> = ({ name, width, position, classes}: Props) => {
   
   const selectMiniMe = (name: string): any => {
     switch (name) {
@@ -36,7 +37,13 @@ export const MiniMe: React.FC<Props> = ({ name }: Props) => {
     }
   }
 
-  return <div className={styles['mini-me']}>
+
+
+  return <div className={cx(styles['mini-me'], classes)} style={{
+    width: width || '200px',
+    // TODO: This is fine for now but it should be replaced with a flexbox/cssgrids implementation
+    float: position || 'right'
+  }}>
     { selectMiniMe(name) }
     </div>
 }

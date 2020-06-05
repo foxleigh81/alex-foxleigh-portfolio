@@ -21,9 +21,9 @@
     "test": "lerna run test",
     "test-local" : "lerna run test-local",
     "lint": "lerna run lint",
-    "storybook": "lerna run storybook --scope @afp/components",
-    "build-storybook" : "lerna run build-storybook --scope @afp/components",
-    "build": "lerna run build --scope @afp/components --scope @afp/client",
+    "storybook": "lerna run storybook --scope @afp/components --stream",
+    "build-storybook" : "lerna run build-storybook --scope @afp/components --parallel",
+    "build": "lerna run build --scope @afp/components --scope @afp/client --parallel",
     "component-build": "lerna run build --scope @afp/components",
     "component-dev": "yarn component-build & lerna run watch --parallel --scope @afp/components",
     "diff": "lerna diff"

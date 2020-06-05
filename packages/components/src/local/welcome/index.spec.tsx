@@ -7,7 +7,7 @@ import Welcome from './index'
 
 it('Welcome renders correctly', () => {
   const tree = renderer
-    .create(<Welcome name="test" colour="blue" />)
+    .create(<Welcome status="available" minime="available" />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
