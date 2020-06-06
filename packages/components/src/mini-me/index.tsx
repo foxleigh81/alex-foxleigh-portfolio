@@ -11,6 +11,7 @@ import { ReactComponent as Available } from './images/available.svg'
 import { ReactComponent as Blushing } from './images/blushing.svg' 
 import { ReactComponent as Skills } from './images/skills.svg' 
 import { ReactComponent as Smile } from './images/smile.svg' 
+import { ReactComponent as Beach } from './images/beach.svg' 
 
 
 /* import styles */
@@ -31,6 +32,8 @@ export const MiniMe: React.FC<Props> = ({ name, width, position, classes}: Props
         return <Skills />
       case 'phone':
         return <Phone />
+        case 'beach':
+          return <Beach />
       case 'smile':
       default:
         return <Smile />

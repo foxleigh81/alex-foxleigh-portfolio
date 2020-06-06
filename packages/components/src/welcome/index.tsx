@@ -10,17 +10,18 @@ import styles from './styles.module.scss'
 
 /* Import helpers */
 import salutation from './helpers/salutation'
+
+/* Import Components */
 import MiniMe from '../mini-me'
 import Status from '../status'
-
 
 /* Render component */
 export const Welcome: React.FC<Props> = ({ status, nextDate, minime, hour }: Props) => { 
  const { segment, lightLevel } = salutation(hour || undefined)
  return <div className={cx(styles['block'], styles[lightLevel])}>
+    <MiniMe name={minime} />
     <h1>{capitalize(segment)}</h1>
     <h2>I'm Alex, I like to make things</h2>
-    <MiniMe name={minime} />
     <div style={{
       position: 'absolute',
       left: '5rem',

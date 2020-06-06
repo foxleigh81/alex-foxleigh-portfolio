@@ -10,7 +10,7 @@ export default interface Props {
   /**
    * The mini-me to use
    */
-  minime: 'available' | 'at-desk' | 'blushing' | 'skills' | 'phone' | 'smile'
+  minime: 'available' | 'at-desk' | 'blushing' | 'skills' | 'phone' | 'smile' | 'beach'
   /**
    * The hour of day in 24 hour format. Used to force a specific time setting
    */

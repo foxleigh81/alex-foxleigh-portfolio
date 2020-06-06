@@ -4,4 +4,4 @@
  * in other packages
  */
 
-export { default as MiniMe } from './local/mini-me'
+export { default as MiniMe } from './mini-me'
