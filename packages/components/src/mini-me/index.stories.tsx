@@ -6,7 +6,7 @@ import docs from './README.md'
 
 
 export default {
-  title: 'local/MiniMe',
+  title: 'MiniMe',
   component: MiniMe,
   decorators: [withKnobs],
   parameters: {
@@ -23,7 +23,8 @@ const minimes = [
   'blushing',
   'phone',
   'skills',
-  'available'
+  'available',
+  'beach'
 ]
 
 const miniMeKnobs: Function = (selected: string) => select('Choose a Mini Me', minimes, selected, 'options' )

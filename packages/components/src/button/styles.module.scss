@@ -1,0 +1,11 @@
+@use '@afp/themes' as vars;
+
+.button {
+  background-color: rgba(vars.$lightest, .7);
+  display: inline-block;
+  padding: vars.$padding/2 vars.$padding;
+  font-size: vars.$default;
+  font-weight: bold;
+  color: rgba(vars.$darkest, .8);
+  border-radius: 1rem;
+}

@@ -1,6 +1,7 @@
 @use '@afp/themes' as vars;
 
 .block {
+  position: relative;
   color: white;
   font-weight: bold;
   overflow: hidden;

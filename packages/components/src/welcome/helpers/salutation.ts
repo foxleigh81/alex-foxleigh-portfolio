@@ -10,7 +10,7 @@ const salutation = (hour?: number) => {
         let timeString = 'night'
 
         // If it's between 23:00 and 06:00 then it's night time
-        if (t > 22 || t < 5) timeString = 'night'
+        if (t > 22 || t < 5 || t === 0) timeString = 'night'
         // If it's between 06:00 and 09:00 then it's early morning
         if (t >= 5 && t < 10) timeString = 'early-morning'
         // If it's between 10:00 and 11:00 then it's mid morning

@@ -8,7 +8,7 @@ import docs from './README.md'
 
 
 export default {
-  title: 'local/Welcome',
+  title: 'Welcome',
   component: Welcome,
   decorators: [withKnobs],
   parameters: {
@@ -31,5 +31,5 @@ const options = {
 export const Available: React.FC = () => <Welcome status="available" nextDate="25/12/20" minime="available" hour={number(label, defaultValue, options)} />
 export const Unavailable: React.FC = () => <Welcome status="unavailable" nextDate="25/12/20" minime="at-desk" hour={number(label, defaultValue, options)}/>
 export const UnavailableNoReturnDate: React.FC = () => <Welcome status="unavailable" minime="at-desk" hour={number(label, defaultValue, options)}/>
-export const OnHoliday: React.FC = () => <Welcome status="holiday" nextDate="25/12/20" minime="smile" hour={number(label, defaultValue, options)} />
+export const OnHoliday: React.FC = () => <Welcome status="holiday" nextDate="25/12/20" minime="beach" hour={number(label, defaultValue, options)} />
 
