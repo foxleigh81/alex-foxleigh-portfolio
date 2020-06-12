@@ -4,6 +4,9 @@ interface CssExports {
   'block': string;
   'darkness': string;
   'daylight': string;
+  'salutation': string;
+  'status-available': string;
+  'status-container': string;
   'sunrise': string;
   'sunset': string;
 }

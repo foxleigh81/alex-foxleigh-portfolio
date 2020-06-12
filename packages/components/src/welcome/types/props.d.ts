@@ -1,8 +1,10 @@
-export default interface Props {
+import { Statuses, MiniMes } from '@afp/custom-types'
+
+export default interface Props { 
   /**
    * My current availability status
    */
-  status: 'available' | 'unavailable' | 'holiday'
+  status: Statuses
   /**
    * The date I expect my status to change
    */
@@ -10,7 +12,12 @@ export default interface Props {
   /**
    * The mini-me to use
    */
-  minime: 'available' | 'at-desk' | 'blushing' | 'skills' | 'phone' | 'smile' | 'beach'
+  miniMeName: MiniMes
+  /**
+   * The width of the mini-me
+   * @default 'regular'
+   */
+  miniMeWidth?: 'narrow' | 'regular' | 'wide'
   /**
    * The hour of day in 24 hour format. Used to force a specific time setting
    */

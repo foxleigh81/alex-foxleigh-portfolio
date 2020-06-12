@@ -1,5 +1,15 @@
+@use '@afp/themes' as vars;
+@use '@afp/themes/breakpoints' as bp;
+
 .status {
   p {
+    font-size: vars.$default * .8;
+    @media (min-width: bp.$small) {
+      font-size: vars.$default;
+    }
     line-height: 2;
+  }
+  :global .welcome-button {
+    margin-right: vars.$margin;
   }
 }

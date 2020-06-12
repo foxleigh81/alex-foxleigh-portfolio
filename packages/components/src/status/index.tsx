@@ -10,6 +10,9 @@ import styles from './styles.module.scss'
 /* Import Components */
 import { Button } from '../button'
 
+const contactMe = () => console.log('This will go to the contact page or email me')
+const downloadCV = () => console.log('This will download my cv')
+
 /* Render component */
 export const Status: React.FC<Props> = ({ status, date }: Props) => {
   const prettyDate = date ? moment(date, 'DD/MM/YY').format('dddd, Do MMMM, YYYY') : null
@@ -19,13 +22,24 @@ export const Status: React.FC<Props> = ({ status, date }: Props) => {
   switch(status) {
     default:
     case 'available': 
-      inner = <><p>I am currently available for work.</p> <p>For more information, click below:</p><p><Button>Get in touch</Button></p></>
+      inner = <>
+        <p>I am currently available for work.</p>
+        <p>For more information, click below:</p>
+        <p>
+          <Button classes="welcome-button" action={contactMe}>Get in touch</Button>
+          <Button type="link" action={downloadCV}>Download CV</Button>
+        </p>
+      </>
       break
     case 'unavailable':
-      inner = <><p>I'm currently fully-booked. {date && <>I expect have availability again on { prettyDate }</>}</p></>
+      inner = <>
+        <p>I'm currently fully-booked. {date && <>I expect have availability again on { prettyDate }</>}</p>
+      </>
       break
     case 'holiday':
-      inner = <><p>I'm currently taking a well-deserved break. {date && <>I should be available again on { prettyDate }</>}</p></>
+      inner = <>
+        <p>I'm currently taking a well-deserved break. {date && <>I should be available again on { prettyDate }</>}</p>
+      </>
       break
   }
   
