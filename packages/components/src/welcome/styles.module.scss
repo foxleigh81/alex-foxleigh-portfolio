@@ -1,19 +1,45 @@
 @use '@afp/themes' as vars;
+@use '@afp/themes/breakpoints' as bp;
 
 .block {
+  max-width: 1600px;
   position: relative;
   color: white;
   font-weight: bold;
   overflow: hidden;
-  padding: vars.$segmentPadding; 
+  min-height: 350px;
+  text-align: center;
+  padding: vars.$segmentPadding / 3 vars.$segmentPadding / 2; 
+
+  @media (min-width: bp.$medium-small) {
+    text-align: left;
+    padding: vars.$segmentPadding / 2 vars.$segmentPadding / 1.5; 
+  }
+  @media (min-width: bp.$medium) {
+    padding: vars.$segmentPadding / 3 vars.$segmentPadding / 1.5; 
+  }
 
   h1 {
-    font-size: vars.$xxl-header;
+    font-size: vars.$xl-header;
+    @media (min-width: bp.$medium-small) {
+      font-size: vars.$xl-header;
+    }
+    @media (min-width: bp.$medium) {
+      font-size: vars.$xxl-header;
+    }
   }
   
   h2 {
-    font-size: vars.$xl-header;
-    margin-top: -(vars.$margin)*3;
+    @media (min-width: bp.$small) {
+      font-size: vars.$m-header;
+    }
+    @media (min-width: bp.$medium-small) {
+      font-size: vars.$l-header;
+    }
+    @media (min-width: bp.$medium) {
+      font-size: vars.$xl-header;
+      margin-top: -(vars.$margin)*2;
+    }
   }
 
   a {
@@ -21,61 +47,130 @@
   }
 }
 
-@mixin time($scheme, $invert, $amount) {
-  a {
-    @if $invert != true {
-      color: darken($scheme, $amount);
-      border-color: darken($scheme, $amount);
-      &:hover {
-        border-color: darken($scheme, $amount+30);
+.salutation {
+  position: relative;
+  z-index: 1000;
+}
+
+.status-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  padding: inherit;
+  width: 100%;
+  @media (min-width: bp.$medium-small) {
+   width: auto;
+  }
+}
+
+// Background is based on time of day
+
+// time, from, to, mid, invert, marginMultiplier
+$time_of_day: 
+  "sunrise" #3B4371 #F3904F #c7a86e true,
+  "daylight" #0077ff #004e92 #45cefc false,
+  "sunset" #3c1053 #ad5389 #464696 false,
+  "darkness" #000428 #004e92 #05021d false
+;
+
+// Default backgrounds
+@each $time, $from, $to, $mid, $invert in $time_of_day {
+  .#{$time} {
+    background: $to;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, $from 0%, $mid 40%, $to 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+    :global .welcome-button {
+      color: vars.$lightest;
+      margin-top: vars.$margin*2;
+      @if $invert {
+        background-color: darken($from, 10);
+        &:hover {
+          background-color: lighten($from, 20);
+        }
+      } @else {
+        background-color: lighten($from, 10);
+        &:hover {
+          background-color: darken($from, 20);
+        }
+      }     
+    }
+  }
+}
+
+@mixin enhanced-sky($image) {
+  h1, h2, p, button {
+    text-shadow: 2px 2px 1px rgba(vars.$darkest, .6);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    background: url('./images/#{$image}.svg') no-repeat;
+    background-position: right top;
+    
+    @media (min-width: bp.$small) {
+      background-size: cover;
+    }
+    @media (min-width: bp.$medium-small) {
+
+      background-size: cover;
+    }
+    @media (min-width: bp.$medium) {
+      background-position: right 150%;
+      background-size: cover;
+    }
+
+  }
+}
+
+// Enhanced backgrounds
+@each $time, $a, $b, $c, $d in $time_of_day {
+  .#{$time} {
+    @include enhanced-sky($time)
+  }
+}
+
+// Foreground is based on availability status
+.status {
+  &-available {
+    :global .mini-me {
+      position: relative;
+      z-index: 500;    
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 200;
+      background: url(./images/rolling-hills.svg) no-repeat bottom right;
+      background-size: cover;
+      @media (min-width: bp.$medium-small) {
+        height: 80%;
       }
     }
-    @if $invert == true {
-      color: lighten($scheme, $amount);
-      border-color: lighten($scheme, $amount);
-      &:hover {
-        border-color: lighten($scheme, $amount+20);
+    &.darkness {
+      &:after {
+        filter: brightness(20%) grayscale(70%);
       }
     }
-  }
-}
-
-.sunrise {
-  background: #F3904F;  /* fallback for old browsers */
-  background: linear-gradient(to bottom, #3B4371, #F3904F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  @include time(#c7a86e, false, 35);
-  
-  h2 {
-    margin-top: -(vars.$margin)*3;
-  }
-}
-
-.daylight {
-  background: #87e0fd; /* fallback for old browsers */
-  background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  @include time(#00b7ff, false, 25);
-  h2 {
-    margin-top: -(vars.$margin)*3;
-  }
-}
-
-.sunset {
-  background: #ad5389;  /* fallback for old browsers */
-  background: linear-gradient(to bottom, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  @include time(#464696, true, 40);
-  h2 {
-    margin-top: -(vars.$margin)*3;
-  }
-}
-
-.darkness {
-  background: #000428;  /* fallback for old browsers */
-  background: linear-gradient(to top, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  @include time(#05021d, true, 80);
-  h2 {
-    margin-top: -(vars.$margin)*1.5;
+    &.sunrise {
+      &:after {
+        filter: brightness(60%);
+      }
+    }
+    &.sunset {
+      &:after {
+        filter: brightness(40%);
+      }
+    }
   }
 }

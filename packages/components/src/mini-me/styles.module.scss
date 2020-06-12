@@ -1,6 +1,50 @@
+@use '@afp/themes/breakpoints' as bp;
+
 .mini-me {
-  height: 100%;
+  height: auto;
   svg {
-    height: 100%;
+    height: auto;
+  }
+
+  &.w {
+    &-narrow {
+      @media (min-width: bp.$small) {
+        // For now, disable the mini me on smaller devices
+        display: none;
+      }
+      @media (min-width: bp.$medium-small) {
+        display: block;
+        width: 120px;
+      }
+      @media (min-width: bp.$medium) {
+        width: 100px;
+      }
+    }
+    &-regular {
+      @media (min-width: bp.$small) {
+        // For now, disable the mini me on smaller devices
+        display: none;
+      }
+      @media (min-width: bp.$medium-small) {
+        display: block;
+        width: 150px;
+      }
+      @media (min-width: bp.$medium) {
+        width: 200px;
+      }
+    }
+    &-wide {
+      @media (min-width: bp.$small) {
+        // For now, disable the mini me on smaller devices
+        display: none;
+      }
+      @media (min-width: bp.$medium-small) {
+        display: block;
+        width: 240px;
+      }
+      @media (min-width: bp.$medium) {
+        width: 300px;
+      }
+    }
   }
 }

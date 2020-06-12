@@ -17,5 +17,10 @@ export default {
   }
 }
 
-export const Default: React.FC = () => <Button>Click me</Button>
+const clickAction = (msg: string): void => {
+  alert(msg)
+}
+
+export const Lozenge: React.FC = () => <Button action={() => clickAction('Clicked lozenge')}>Click me</Button>
+export const Link: React.FC = () => <Button action={() => clickAction('Clicked link')} type="link">Click me</Button>
 

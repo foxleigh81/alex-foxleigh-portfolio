@@ -8,6 +8,14 @@ import styles from './styles.module.scss'
 import PropTypes from './types/props'
 
 /* Render component */
-export const Button: React.FC<PropTypes> = ({ children, classes }) => <button className={cx(styles.button, classes)}>{children}</button>
+export const Button: React.FC<PropTypes> = ({ children, type, classes, action }) => {
+    const buttonType = type || 'lozenge'
+    
+    if (buttonType === 'lozenge') {
+        return <button className={cx(styles.button, classes)} onClick={action}>{children}</button>
+    } else {
+        return <a className={cx(styles['button-link'], classes)} onClick={action}>{children}</a>
+    }
+}
 
 export default Button

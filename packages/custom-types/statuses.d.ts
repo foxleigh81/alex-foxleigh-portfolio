@@ -1,0 +1,1 @@
+export type Statuses =  'available' | 'unavailable' | 'holiday'

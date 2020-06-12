@@ -1,0 +1,1 @@
+export type MiniMes = 'available' | 'at-desk' | 'blushing' | 'skills' | 'phone' | 'smile' | 'beach' 
