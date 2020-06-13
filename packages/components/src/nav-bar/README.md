@@ -10,6 +10,10 @@ This is an example readme file for the 'Nav Bar' component.
 
 <!-- SOURCE -->
 
+## Roadmap
+
+- Add a mobile (burger) menu once the links start to build up
+
 ## Props
 
 <!-- PROPS -->
