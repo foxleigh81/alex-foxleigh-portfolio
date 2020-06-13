@@ -1,11 +1,19 @@
+$custom-bp: 790px;
 
-$socialLinks: git-hub;
+$socialLinks: git-hub, blog, dribbble, facebook, linked-in, behance, skype, twitter, instagram;
 
 .nav-bar {
-  background-color: vars.$darkest;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-  padding: vars.$padding;
+  background-color: lighten(vars.$darkest, 15%);
+  
+  
+  @media (min-width: $custom-bp) {
+    display: grid;
+    grid-template-columns: 70% 30%;
+  }
+
+  @media (min-width: bp.$medium) {
+    grid-template-columns: 80% 20%;
+  }
   a { 
     color: vars.$lightest; 
     font-size: vars.$default * .9;
@@ -15,10 +23,29 @@ $socialLinks: git-hub;
   }
 }
 
+.nav-links {
+  padding: vars.$padding;
+  li {
+    display: inline-block;
+    margin-right: vars.$margin*2;
+  }
+}
 
 .social-links { 
-  text-align: right;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  padding: vars.$padding;
+  text-align: center;
+  @media (min-width: $custom-bp) {
+    text-align: right;
+  }
+  background-color: rgba(vars.$lightest, .8);
+  justify-items: stretch;
+
   .link {
+    span {
+      display: none;
+    }
     &::before {
       content: "";
       width: 20px;
@@ -28,6 +55,9 @@ $socialLinks: git-hub;
       vertical-align: text-top;
       background-size: contain;
       background-repeat: no-repeat;
+    }
+    &:hover {
+      opacity: .7;
     }
   }
   @each $link in $socialLinks {
