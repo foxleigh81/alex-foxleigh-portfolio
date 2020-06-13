@@ -1,0 +1,41 @@
+
+$socialLinks: git-hub;
+
+.nav-bar {
+  background-color: vars.$darkest;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  padding: vars.$padding;
+  a { 
+    color: vars.$lightest; 
+    font-size: vars.$default * .9;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.social-links { 
+  text-align: right;
+  .link {
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-right: vars.$margin;
+      vertical-align: text-top;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  @each $link in $socialLinks {
+    .#{$link} {
+      @extend .link;
+      &::before {
+        background-image: url('./images/#{$link}.svg');
+      }
+    }
+  }
+}
