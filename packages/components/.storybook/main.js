@@ -74,7 +74,10 @@ module.exports = {
                 // Prefer `dart-sass`
                 implementation: require('sass'),
                 sourceMap: false,
-                prependData: '@use "~@afp/themes";',
+                prependData: `
+                  @use '@afp/themes' as vars;
+                  @use '@afp/themes/breakpoints' as bp;
+                `,
                 sassOptions: {
                   outputStyle: 'expanded',
                   indentWidth: 4,
