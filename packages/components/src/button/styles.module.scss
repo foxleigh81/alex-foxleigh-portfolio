@@ -1,17 +1,16 @@
-
 .common {
   cursor: pointer;
   display: inline-block;
-  padding: vars.$padding/2 vars.$padding;
+  padding: vars.$padding/2 vars.$padding vars.$padding/3;
   font-size: vars.$default;
   font-weight: bold;
+  @include vars.buttonColor(#6699cc, true)
 }
 
 .button {
   @extend .common;
-  background-color: rgba(vars.$lightest, .7);
-  color: (vars.$darkest, .8);
-  border-radius: 1rem;
+  border-radius: .5rem;
+  
   &-link {
     @extend .common;
     background-color: transparent;

@@ -6,14 +6,17 @@
   overflow: hidden;
   min-height: 350px;
   text-align: center;
-  padding: vars.$segmentPadding / 3 vars.$segmentPadding / 2; 
 
-  @media (min-width: bp.$medium-small) {
-    text-align: left;
-    padding: vars.$segmentPadding / 2 vars.$segmentPadding / 1.5; 
-  }
-  @media (min-width: bp.$medium) {
-    padding: vars.$segmentPadding / 3 vars.$segmentPadding / 1.5; 
+  .foreground {
+    padding: vars.$segmentPadding / 3 vars.$segmentPadding / 2; 
+    
+    @media (min-width: bp.$medium-small) {
+      text-align: left;
+      padding: vars.$segmentPadding / 2 vars.$segmentPadding / 1.5; 
+    }
+    @media (min-width: bp.$medium) {
+      padding: vars.$segmentPadding / 3 vars.$segmentPadding / 1.5; 
+    }
   }
 
   h1 {
@@ -57,7 +60,7 @@
   padding: inherit;
   width: 100%;
   @media (min-width: bp.$medium-small) {
-   width: auto;
+   width: 40%;
   }
 }
 
@@ -65,10 +68,10 @@
 
 // time, from, to, mid, invert, marginMultiplier
 $time_of_day: 
-  "sunrise" #3B4371 #F3904F #c7a86e true,
-  "daylight" #0077ff #004e92 #45cefc false,
-  "sunset" #3c1053 #ad5389 #464696 false,
-  "darkness" #000428 #004e92 #05021d false
+  "sunrise" #3B4371 #F3904F #c7a86e false,
+  "daylight" #0077ff #004e92 #45cefc true,
+  "sunset" #3c1053 #ad5389 #464696 true,
+  "darkness" #000428 #004e92 #05021d true
 ;
 
 // Default backgrounds
@@ -78,26 +81,21 @@ $time_of_day:
     background: linear-gradient(to bottom, $from 0%, $mid 40%, $to 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         
     :global .welcome-button {
-      color: vars.$lightest;
+      @include vars.buttonColor($to, $invert);
       margin-top: vars.$margin*2;
-      @if $invert {
-        background-color: darken($from, 10);
-        &:hover {
-          background-color: lighten($from, 20);
-        }
-      } @else {
-        background-color: lighten($from, 10);
-        &:hover {
-          background-color: darken($from, 20);
-        }
-      }     
     }
   }
 }
 
+
+
 @mixin enhanced-sky($image) {
-  h1, h2, p, button {
+  h1, h2, p {
     text-shadow: 2px 2px 1px rgba(vars.$darkest, .6);
+  }
+
+  :global .add-shadow {
+    box-shadow: 2px 2px 1px rgba(vars.$darkest, .6);
   }
 
   &:before {
@@ -133,41 +131,66 @@ $time_of_day:
   }
 }
 
+:global .mini-me {
+  position: relative;
+  z-index: 500;    
+}
+
+@mixin foregroundSetup($addHills) {    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @if $addHills == true {
+      background-image: url(./images/rolling-hills.svg);
+      background-position: bottom right;
+      @media (min-width: bp.$medium) {
+        background-position: 100% 80%;
+      }
+      @at-root .darkness {
+        .foreground:before {
+          filter: brightness(20%) grayscale(70%);
+        } 
+      }
+      @at-root .sunrise {
+        .foreground:before {
+          filter: brightness(60%);
+        }
+      }
+      @at-root .sunset {
+        .foreground:before {
+          filter: brightness(40%);
+        }
+      }
+    }
+}
+
 // Foreground is based on availability status
 .status {
   &-available {
-    :global .mini-me {
-      position: relative;
-      z-index: 500;    
+    .foreground {
+      &:before {
+        content: "";
+        @include foregroundSetup(true)
+      }
     }
-    &:after {
+  }
+  &-unavailable {
+    .foreground {
+      &:before {
+        content: "";
+        @include foregroundSetup(true)
+      }
+    }
+    &::after {
       content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 200;
-      background: url(./images/rolling-hills.svg) no-repeat bottom right;
-      background-size: cover;
-      @media (min-width: bp.$medium-small) {
-        height: 80%;
-      }
-    }
-    &.darkness {
-      &:after {
-        filter: brightness(20%) grayscale(70%);
-      }
-    }
-    &.sunrise {
-      &:after {
-        filter: brightness(60%);
-      }
-    }
-    &.sunset {
-      &:after {
-        filter: brightness(40%);
-      }
+      @include foregroundSetup(false);
+      background-image: url(./images/office.svg);
+      background-position: center right;
     }
   }
 }

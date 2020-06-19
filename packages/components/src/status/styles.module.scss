@@ -1,12 +1,23 @@
 .status {
   p {
-    font-size: vars.$default * .8;
+    strong {
+      font-size: vars.$default * 1.1;
+      font-family: 'montserratbold';
+    }
     @media (min-width: bp.$small) {
       font-size: vars.$default;
     }
-    line-height: 2;
+    line-height: 1.5;
   }
-  :global .welcome-button {
-    margin-right: vars.$margin;
+  .date {
+    font-size: vars.$default * 1.2;
+    font-family: 'montserratbold';
+  }
+
+  .buttons {
+    margin-top: vars.$margin;
+    button:not(:last-of-type) {
+      margin-right: vars.$margin;
+    }
   }
 }

@@ -15,7 +15,7 @@ const downloadCV = () => console.log('This will download my cv')
 
 /* Render component */
 export const Status: React.FC<Props> = ({ status, date }: Props) => {
-  const prettyDate = date ? moment(date, 'DD/MM/YY').format('dddd, Do MMMM, YYYY') : null
+  const prettyDate = date ? moment(date, 'DD/MM/YY').format('Do MMMM, YYYY') : null
   
   let inner
 
@@ -23,17 +23,20 @@ export const Status: React.FC<Props> = ({ status, date }: Props) => {
     default:
     case 'available': 
       inner = <>
-        <p>I am currently available for work.</p>
+        <p>I am currently <strong>available for work.</strong></p>
         <p>For more information, click below:</p>
-        <p>
-          <Button classes="welcome-button" action={contactMe}>Get in touch</Button>
-          <Button type="link" action={downloadCV}>Download CV</Button>
-        </p>
+        <div className={styles.buttons}>
+          <Button classes="welcome-button add-shadow" action={contactMe}>Get in touch</Button>
+          <Button classes="add-shadow" action={downloadCV}>Download CV</Button>
+        </div>
       </>
       break
     case 'unavailable':
       inner = <>
-        <p>I'm currently fully-booked. {date && <>I expect have availability again on { prettyDate }</>}</p>
+        <p>I'm currently <strong>fully-booked.</strong> <br /> {date && <>I should be available from: <br /> <span className={styles.date}>{ prettyDate }</span></>}</p>
+        <div className={styles.buttons}>
+          <Button action={downloadCV}>Download CV</Button>
+        </div>
       </>
       break
     case 'holiday':
