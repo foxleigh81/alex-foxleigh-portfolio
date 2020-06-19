@@ -21,25 +21,13 @@
 
   h1 {
     font-size: vars.$xl-header;
-    @media (min-width: bp.$medium-small) {
-      font-size: vars.$xl-header;
-    }
     @media (min-width: bp.$medium) {
-      font-size: vars.$xxl-header;
+      font-size: vars.$xl-header*1.5;
     }
   }
   
   h2 {
-    @media (min-width: bp.$small) {
-      font-size: vars.$m-header;
-    }
-    @media (min-width: bp.$medium-small) {
-      font-size: vars.$l-header;
-    }
-    @media (min-width: bp.$medium) {
-      font-size: vars.$xl-header;
-      margin-top: -(vars.$margin)*2;
-    }
+    font-size: vars.$l-header;
   }
 
   a {
@@ -48,8 +36,20 @@
 }
 
 .salutation {
-  position: relative;
+  position: absolute;
+  top: vars.$padding;
+  left: 0;
   z-index: 1000;
+  h1 {
+    display: none;
+    
+  }
+  @media (min-width: bp.$small) {
+    position: relative;
+    h1 {
+      display: block;
+    }
+  }
 }
 
 .status-container {
@@ -59,7 +59,7 @@
   z-index: 1000;
   padding: inherit;
   width: 100%;
-  @media (min-width: bp.$medium-small) {
+  @media (min-width: bp.$medium) {
    width: 40%;
   }
 }
@@ -108,7 +108,7 @@ $time_of_day:
     height: 100%;
     background: url('./images/#{$image}.svg') no-repeat;
     background-position: right top;
-    
+    background-size: cover;
     @media (min-width: bp.$small) {
       background-size: cover;
     }
@@ -132,8 +132,19 @@ $time_of_day:
 }
 
 :global .mini-me {
+  height: 95%;
+  display: none;
   position: relative;
-  z-index: 500;    
+  margin-bottom: -(vars.$margin*3);
+  padding-top: vars.$padding*2;
+  @media (min-width: bp.$extra-small) {
+    display: block;
+  }
+  @media (min-width: bp.$small) {
+    position: absolute;
+    bottom: vars.$padding;
+    right: vars.$padding;
+  }
 }
 
 @mixin foregroundSetup($addHills) {    
@@ -145,6 +156,7 @@ $time_of_day:
     z-index: 200;
     background-size: cover;
     background-repeat: no-repeat;
+
     @if $addHills == true {
       background-image: url(./images/rolling-hills.svg);
       background-position: bottom right;
@@ -175,7 +187,7 @@ $time_of_day:
     .foreground {
       &:before {
         content: "";
-        @include foregroundSetup(true)
+        @include foregroundSetup(true);
       }
     }
   }
@@ -183,7 +195,7 @@ $time_of_day:
     .foreground {
       &:before {
         content: "";
-        @include foregroundSetup(true)
+        @include foregroundSetup(true);
       }
     }
     &::after {
@@ -191,6 +203,10 @@ $time_of_day:
       @include foregroundSetup(false);
       background-image: url(./images/office.svg);
       background-position: center right;
+      display: none;
+      @media (min-width: bp.$extra-small) {
+        display: block;
+      }
     }
   }
 }

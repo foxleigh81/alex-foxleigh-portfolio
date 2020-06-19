@@ -42,10 +42,7 @@ export const MiniMe: React.FC<Props> = ({ name, width, position, classes}: Props
 
 
 
-  return <div className={cx(styles['mini-me'], styles[`w-${width}`], classes)} style={{
-    // TODO: This is fine for now but it should be replaced with a flexbox/cssgrids implementation
-    float: position || 'right'
-  }}>
+  return <div className={cx(styles['mini-me'], styles[`w-${width}`], classes)}>
     { selectMiniMe(name) }
     </div>
 }

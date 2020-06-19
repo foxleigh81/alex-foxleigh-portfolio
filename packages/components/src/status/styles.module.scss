@@ -17,7 +17,11 @@
   .buttons {
     margin-top: vars.$margin;
     button:not(:last-of-type) {
-      margin-right: vars.$margin;
+      margin-bottom: vars.$margin;
+      @media (min-width: bp.$extra-small) {
+        margin-right: vars.$margin;
+        margin-bottom: 0;
+      }
     }
   }
 }
