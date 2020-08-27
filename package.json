@@ -16,6 +16,7 @@
   },
   "scripts": {
     "start": "lerna run start --scope @afp/client",
+    "prestart": "lerna run libbuild --stream",
     "dev" : "yarn component-dev & yarn start",
     "develop" : "yarn component-dev & yarn storybook & yarn start",
     "test": "lerna run test",

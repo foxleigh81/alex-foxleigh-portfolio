@@ -20,7 +20,7 @@ export const Welcome: React.FC<Props> = ({ status, nextDate, miniMeName, miniMeW
  const { segment, lightLevel } = salutation(hour || undefined)
  return <div className={cx(styles['block'], styles[lightLevel], styles[`status-${status}`])}>
    <div className={styles.foreground}>
-    <MiniMe name={miniMeName} width={miniMeWidth || 'regular'} classes={"mini-me"} />
+    <MiniMe name={miniMeName} width={miniMeWidth || 'regular'} classes={"mini-me"}/>
       <div className={styles["salutation"]}>
         <h1>{capitalize(segment)}</h1>
         <h2>I'm Alex, I like to make things</h2>

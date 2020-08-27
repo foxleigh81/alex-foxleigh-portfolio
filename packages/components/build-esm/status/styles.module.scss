@@ -1,0 +1,27 @@
+.status {
+  p {
+    strong {
+      font-size: vars.$default * 1.1;
+      font-family: 'montserratbold';
+    }
+    @media (min-width: bp.$small) {
+      font-size: vars.$default;
+    }
+    line-height: 1.5;
+  }
+  .date {
+    font-size: vars.$default * 1.2;
+    font-family: 'montserratbold';
+  }
+
+  .buttons {
+    margin-top: vars.$margin;
+    button:not(:last-of-type) {
+      margin-bottom: vars.$margin;
+      @media (min-width: bp.$extra-small) {
+        margin-right: vars.$margin;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
