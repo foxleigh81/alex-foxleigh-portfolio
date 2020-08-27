@@ -2,7 +2,7 @@ import React from 'react'
 
 /* Import components */
 
-import { MiniMe } from '@afp/components'
+import { Welcome } from '@afp/components'
 
 /* Import Types */
 import Props from './types/props'
@@ -14,7 +14,7 @@ import styles from './styles.module.scss'
 export const Home: React.FC<Props> = ({ name, colour }: Props) =>
   <div className={styles[colour]}>
     This is an example component, the name provided to it was {name}
-    <MiniMe />
+    <Welcome status="available" nextDate="25/12/20" miniMeName="available" />
   </div>
 
 export default Home
