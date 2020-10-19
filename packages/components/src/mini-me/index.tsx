@@ -5,13 +5,13 @@ import cx from 'classnames'
 import Props from './types/props'
 
 /* import SVGs */
-import { ReactComponent as Phone } from './images/phone.svg' 
-import { ReactComponent as AtDesk } from './images/at-desk.svg' 
-import { ReactComponent as Available } from './images/available.svg' 
-import { ReactComponent as Blushing } from './images/blushing.svg' 
-import { ReactComponent as Skills } from './images/skills.svg' 
-import { ReactComponent as Smile } from './images/smile.svg' 
-import { ReactComponent as Beach } from './images/beach.svg' 
+import Phone from './images/phone.svg' 
+import AtDesk from './images/at-desk.svg' 
+import Available from './images/available.svg' 
+import Blushing from './images/blushing.svg' 
+import Skills from './images/skills.svg' 
+import Smile from './images/smile.svg' 
+import Beach from './images/beach.svg' 
 
 
 /* import styles */
@@ -23,20 +23,20 @@ export const MiniMe: React.FC<Props> = ({ name, width, position, classes}: Props
   const selectMiniMe = (name: string): any => {
     switch (name) {
       case 'available' :
-        return <Available />
+        return <img src={Available} />
       case 'at-desk':
-        return <AtDesk/>
+        return <img src={AtDesk} />
       case 'blushing':
-        return <Blushing />
+        return <img src={Blushing} />
       case 'skills':
-        return <Skills />
+        return <img src={Skills} />
       case 'phone':
-        return <Phone />
+        return <img src={Phone} />
         case 'beach':
-          return <Beach />
+          return <img src={Beach} />
       case 'smile':
       default:
-        return <Smile />
+        return <img src={Smile} />
     }
   }
 

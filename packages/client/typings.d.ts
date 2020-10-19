@@ -2,9 +2,11 @@ declare module '*.md' {
   const content: string
   export = content;
 }
-declare module '*.svg' {
-  import React = require('react');
-  export const ReactComponent: React.SFC<React.SVGProps<SVGSVGElement>>;
-  const src: string;
-  export default src;
+interface SvgrComponent
+  extends React.FunctionComponent<React.SVGAttributes<SVGElement>> {}
+
+declare module "*.svg" {
+  const ReactComponent: SvgrComponent;
+
+  export { ReactComponent };
 }
