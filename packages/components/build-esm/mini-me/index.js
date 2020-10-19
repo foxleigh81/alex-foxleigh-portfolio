@@ -1,13 +1,13 @@
 import React from 'react';
 import cx from 'classnames';
 /* import SVGs */
-import { ReactComponent as Phone } from './images/phone.svg';
-import { ReactComponent as AtDesk } from './images/at-desk.svg';
-import { ReactComponent as Available } from './images/available.svg';
-import { ReactComponent as Blushing } from './images/blushing.svg';
-import { ReactComponent as Skills } from './images/skills.svg';
-import { ReactComponent as Smile } from './images/smile.svg';
-import { ReactComponent as Beach } from './images/beach.svg';
+import Phone from './images/phone.svg';
+import AtDesk from './images/at-desk.svg';
+import Available from './images/available.svg';
+import Blushing from './images/blushing.svg';
+import Skills from './images/skills.svg';
+import Smile from './images/smile.svg';
+import Beach from './images/beach.svg';
 /* import styles */
 import styles from './styles.module.scss';
 /* Render component */
@@ -15,20 +15,20 @@ export const MiniMe = ({ name, width, position, classes }) => {
     const selectMiniMe = (name) => {
         switch (name) {
             case 'available':
-                return React.createElement(Available, null);
+                return React.createElement("img", { src: Available });
             case 'at-desk':
-                return React.createElement(AtDesk, null);
+                return React.createElement("img", { src: AtDesk });
             case 'blushing':
-                return React.createElement(Blushing, null);
+                return React.createElement("img", { src: Blushing });
             case 'skills':
-                return React.createElement(Skills, null);
+                return React.createElement("img", { src: Skills });
             case 'phone':
-                return React.createElement(Phone, null);
+                return React.createElement("img", { src: Phone });
             case 'beach':
-                return React.createElement(Beach, null);
+                return React.createElement("img", { src: Beach });
             case 'smile':
             default:
-                return React.createElement(Smile, null);
+                return React.createElement("img", { src: Smile });
         }
     };
     return React.createElement("div", { className: cx(styles['mini-me'], styles[`w-${width}`], classes) }, selectMiniMe(name));

@@ -4,7 +4,5 @@
  * in other packages
  */
 
-import { MiniMe } from './mini-me'
-
+export { default as MiniMe } from './mini-me'
 export { default as Welcome } from './welcome'
-export { MiniMe }
