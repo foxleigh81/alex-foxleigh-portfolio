@@ -6,4 +6,3 @@ exclude_patterns:
   - "**/*.test.*"
   - "**/*.spec.*"
   - "**/*.config.*"
-  - "packages/e2e"

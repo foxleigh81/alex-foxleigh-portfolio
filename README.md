@@ -1,58 +1,9 @@
-#
- 
-<h2 align="center">Template for Storybook, Next, Typescript, SCSS and Jest</h2>
+# Dis my portfolio!
 
-<p align="center">
-  <a href="https://github.com/trinwin/storybook-next-ts-template/pulls">
-    <img src="https://img.shields.io/badge/PRs-welcome-green.svg" alt="PRs Welcome" />
-  </a>
-  <a href="">
-    <img src="https://img.shields.io/npm/l/trivin" alt="Liscence" />
-  </a>
+It's nearly 11pm and I'm tired. I'll write this another time.
 
-</p>
+Until then, here is a photo of one of my cats falling down our stairs (she's fine, she only fell one step)
 
-This simple guide will help you to set up `Storybook`, `Next`, `Typescript`, `SCSS` and `Jest`.
+![Midnight](https://scontent-lht6-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s750x750/118585251_155215592894852_1506813106599874594_n.jpg?_nc_ht=scontent-lht6-1.cdninstagram.com&_nc_cat=108&_nc_ohc=TZ65ylbOlVYAX-3cT31&_nc_tp=24&oh=9b1d2c79a88981661cd4ab8f34977966&oe=5FC43CB4)
 
-You can find the full tutorial on [Medium](https://medium.com/@trinwin/2020-complete-setup-for-storybook-nextjs-typescript-scss-and-jest-1c9ce41e6481) 📕  or [DEV.to](https://dev.to/trinwin/2020-complete-setup-for-storybook-nextjs-typescript-scss-and-jest-4khm)
-
-## ✅ Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### ⚒️ Installation
-
-```
-# Clone this repository
-git clone https://github.com/trinwin/storybook-next-ts-template
-
-# Go into the repository
-cd storybook-next-ts-template
-
-# Install client dependencies
-yarn install
-
-# Start client on localhost:3000
-yarn run dev
-
-# Start Storybook
-yarn storybook
-
-# Run your test
-yarn test
-```
-
-## ⭐️ Author
-
-👩🏻‍💻 **Trinity Nguyen** - [trinwin](https://github.com/trinwin)
-
-➡️ I will continue to update and make changes to the tutorial.
-
-🤙🏻 Please let me know if you run into any problem.
-
-🤝 Connect with me and find my works on:
-
-- [Twitter](https://twitter.com/_trinwin)
-- [Medium](https://medium.com/@trinwin)
-- [DEV.to](https://dev.to/trinwin)
-- [LinkedIn](https://www.linkedin.com/in/trinwin)
+Wanna see more? They have their own Instagram account (Yup, I'm that sort of person): https://www.instagram.com/midnight_and_shadow_cats/
