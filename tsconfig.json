@@ -1,43 +1,34 @@
 {
-  "exclude": ["node_modules", "dist", "build", "lib", "__tests__", "**/*.test*"],
   "compilerOptions": {
-    "skipLibCheck": false,
-    "target": "esnext",
-    "module": "commonjs",
-    "lib": ["es5", "es6", "es7", "es2017", "dom"],
-    "jsx": "react",
-    "rootDir": ".",
-    "outDir": "build",
-    "downlevelIteration": true,
-    "strict": true,
-    "removeComments": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "esModuleInterop": true,
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@fp/*": ["packages/"]
+      "@components/*": ["components/*"],
+      "@themes/*": ["themes/default/*"]
     },
-    "composite": false,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true
   },
-  "files": [
-    "packages/components/typings.d.ts",
-    "./typings.d.ts"
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
   ],
-  "references": [
-    { "path": "packages/components" },
-    { "path": "packages/custom-types" },
-    { "path": "packages/mocks" }
+  "exclude": [
+    "node_modules"
   ]
 }
