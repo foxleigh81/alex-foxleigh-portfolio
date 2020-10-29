@@ -1,10 +1,8 @@
-import moment from 'moment'
-
 const salutation = (hour?: number) => {
-    moment.locale()
     
-    const time = hour || moment().hour()
-    
+    const today = new Date()
+    const time = hour || today.getHours()
+     
     const timeOfDay = (t: number): string => {
 
         let timeString = 'night'
@@ -29,17 +27,13 @@ const salutation = (hour?: number) => {
             case 'early-morning':
             case 'mid-morning':
                 return `Good morning!`
-                break
             case 'afternoon':
             default:
-                return `Good Afternoon!`
-                break
+                return `Good day!`
             case 'evening':
                 return `Good evening!`
-                break
             case 'night':
                 return `Hi, you're up late!`
-                break
         }
     }
 
