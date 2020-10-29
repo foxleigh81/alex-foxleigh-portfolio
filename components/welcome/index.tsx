@@ -23,7 +23,7 @@ export const Welcome: React.FC<Props> = ({ status, nextDate, miniMeName, miniMeW
    <AlphaBanner />
    <div className={styles.foreground}>
     <MiniMe name={miniMeName} width={miniMeWidth || 'regular'} classes={"mini-me"} />
-      <div className={styles["salutation"]}>
+      <div className={cx(styles['greeting'], styles["salutation"])}>
         <h1>{capitalize(segment)}</h1>
         <h2>I'm Alex, I like to make things</h2>
       </div>
