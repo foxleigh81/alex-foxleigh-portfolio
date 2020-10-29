@@ -17,9 +17,16 @@
     }
   }
 
-  h1 {
-    font-size: vars.$xl-header;
+  .greeting {
+    margin: 2rem;
     @media (min-width: bp.$medium) {
+      margin: 0;
+    }
+  }
+
+  h1 {
+    font-size: vars.$l-header;
+    @media (min-width: bp.$small) {
       font-size: vars.$xl-header*1.5;
     }
   }
@@ -38,18 +45,25 @@
     position: relative;
     margin-bottom: vars.$margin;
     padding-top: vars.$padding*2;
+    
     img {
-      position: absolute;
-      bottom: 0;
-      right: 0;
+      height: 100%;
     }
+
     @media (min-width: bp.$extra-small) {
-      display: block;
+     display: block;
+     position: absolute;
+     top: 30vh;
+     left: 60vw;
+     height: 70%;
+     transform: rotate(-30deg);
     }
     @media (min-width: bp.$small) {
       position: absolute;
       bottom: 0;
       right: vars.$padding;
+      height: 100%;
+      transform: rotate(0);
     }
   }
 
@@ -60,10 +74,7 @@
   top: vars.$padding;
   left: 0;
   z-index: 1000;
-  h1 {
-    display: none;
-    
-  }
+  
   @media (min-width: bp.$small) {
     position: relative;
     h1 {
