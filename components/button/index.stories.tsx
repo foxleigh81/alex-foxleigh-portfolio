@@ -6,7 +6,7 @@ import docs from './README.md'
 
 
 export default {
-  title: 'Button',
+  title: 'Atom/Button',
   component: Button,
   decorators: [],
   parameters: {

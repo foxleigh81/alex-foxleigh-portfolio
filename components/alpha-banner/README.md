@@ -1,6 +1,6 @@
 # Alpha Banner documentation
 
-This is an example readme file for the 'Alpha Banner' component.
+The 'Alpha' banner is a small banner in the top right hand corner of the page which displays a message when clicked.
 
 ## UI Example
 

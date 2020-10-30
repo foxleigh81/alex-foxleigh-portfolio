@@ -5,7 +5,7 @@ interface CssExports {
   'darkness': string;
   'daylight': string;
   'foreground': string;
-  'mini-me': string;
+  'greeting': string;
   'salutation': string;
   'status-available': string;
   'status-container': string;

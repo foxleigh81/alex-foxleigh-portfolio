@@ -8,7 +8,7 @@ import docs from './README.md'
 const Wrapper: React.FC = (storyFn: any) => <div style={{ height: '900px', position: "relative", overflow: "hidden" }}>{storyFn()}</div>
 
 export default {
-  title: 'Alpha Banner',
+  title: 'Molecule/Alpha Banner',
   component: AlphaBanner,
   decorators: [Wrapper],
   parameters: {
