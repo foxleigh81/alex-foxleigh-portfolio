@@ -11,7 +11,7 @@ const Wrapper: React.FC = (storyFn: any) => <div style={{ height: '900px', posit
 
 
 export default {
-  title: 'Welcome',
+  title: 'Organism/Welcome',
   component: Welcome,
   decorators: [withKnobs, Wrapper],
   parameters: {

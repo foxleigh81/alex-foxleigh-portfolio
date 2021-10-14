@@ -5,7 +5,7 @@ import docs from './README.md'
 
 
 export default {
-  title: 'Status',
+  title: 'Organism/Status',
   component: Status,
   decorators: [],
   parameters: {

@@ -1,6 +1,6 @@
 # Button documentation
 
-This is an example readme file for the 'Button' component.
+This is a button. Click on it to do stuff.
 
 ## UI Example
 

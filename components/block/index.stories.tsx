@@ -1,13 +1,13 @@
 import React from 'react'
 
 // Import component files
-import NavBar from './index'
+import Block from './index'
 import docs from './README.md'
 
 
 export default {
-  title: 'Organism/Nav Bar',
-  component: NavBar,
+  title: 'Atom/Block',
+  component: Block,
   decorators: [],
   parameters: {
     readme: {
@@ -17,5 +17,5 @@ export default {
   }
 }
 
-export const Default: React.FC = () => <NavBar />
+export const Default: React.FC = () => <Block name="test" colour="green"/>
 

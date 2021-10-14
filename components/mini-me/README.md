@@ -1,6 +1,6 @@
 # Mini Me documentation
 
-This is an example readme file for the 'Mini Me' component.
+The mini-me component is a small svg illustration which is used at various part of the site. Depending on the props, it can look various different ways.
 
 ## UI Example
 
