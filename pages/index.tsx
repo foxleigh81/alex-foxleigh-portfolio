@@ -10,7 +10,7 @@ import styles from './styles.module.scss'
 /* Render component */
 export const Home: React.FC = () =>
   <div className={styles['page']}>
-    <Welcome status="unavailable" nextDate="01/04/23" miniMeName="at-desk" />
+    <Welcome status="available" nextDate="01/04/23" miniMeName="available" />
   </div>
 
 export default Home
