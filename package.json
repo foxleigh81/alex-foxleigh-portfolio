@@ -25,15 +25,16 @@
     "@svgr/webpack": "^5.4.0",
     "@types/react-dom": "^16.9.9",
     "css-modules-typescript-loader": "^4.0.1",
+    "eslint-config-next": "^13.4.19",
     "file-loader": "^6.2.0",
     "markdown-loader": "^6.0.0",
     "moment": "^2.29.1",
-    "next": "10.0.0",
+    "next": "^13.4.19",
     "next-images": "^1.6.2",
     "next-on-netlify": "^2.6.0",
     "raw-loader": "^4.0.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass": "^1.26.10",
     "storybook-readme": "^5.0.8"
   },
@@ -55,6 +56,6 @@
     "sass-loader": "^9.0.2",
     "style-loader": "^1.2.1",
     "ts-jest": "^26.1.4",
-    "typescript": "^3.9.7"
+    "typescript": "^5.2.2"
   }
 }

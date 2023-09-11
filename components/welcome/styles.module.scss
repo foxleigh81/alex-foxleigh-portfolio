@@ -6,14 +6,14 @@
   overflow: hidden;
 
   .foreground {
-    padding: vars.$segmentPadding / 3 vars.$segmentPadding / 2; 
-    
+    padding: vars.$segmentPadding / 3 vars.$segmentPadding / 2;
+
     @media (min-width: bp.$medium-small) {
       text-align: left;
-      padding: vars.$segmentPadding / 2 vars.$segmentPadding / 1.5; 
+      padding: vars.$segmentPadding / 2 vars.$segmentPadding / 1.5;
     }
     @media (min-width: bp.$medium) {
-      padding: vars.$segmentPadding / 3 vars.$segmentPadding / 1.5; 
+      padding: vars.$segmentPadding / 3 vars.$segmentPadding / 1.5;
     }
   }
 
@@ -30,7 +30,7 @@
       font-size: vars.$xl-header*1.5;
     }
   }
-  
+
   h2 {
     font-size: vars.$l-header;
   }
@@ -45,9 +45,9 @@
     position: relative;
     margin-bottom: vars.$margin;
     padding-top: vars.$padding*2;
-    
+
     img {
-      height: 100%;
+      height: 70%;
     }
 
     @media (min-width: bp.$extra-small) {
@@ -74,7 +74,7 @@
   top: vars.$padding;
   left: 0;
   z-index: 1000;
-  
+
   @media (min-width: bp.$small) {
     position: relative;
     h1 {
@@ -98,7 +98,7 @@
 // Background is based on time of day
 
 // time, from, to, mid, invert, marginMultiplier
-$time_of_day: 
+$time_of_day:
   "sunrise" #3B4371 #F3904F #c7a86e false,
   "daylight" #0077ff #004e92 #45cefc true,
   "sunset" #3c1053 #ad5389 #464696 true,
@@ -110,7 +110,7 @@ $time_of_day:
   .#{$time} {
     background: $to;  /* fallback for old browsers */
     background: linear-gradient(to bottom, $from 0%, $mid 40%, $to 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        
+
     :global .welcome-button {
       @include vars.buttonColor($to, $invert);
       margin-top: vars.$margin*2;
@@ -121,7 +121,7 @@ $time_of_day:
 
 
 @mixin enhanced-sky($image) {
-  
+
   &:before {
     content: "";
     position: absolute;
@@ -155,7 +155,7 @@ $time_of_day:
   }
 }
 
-@mixin foregroundSetup($addHills) {    
+@mixin foregroundSetup($addHills) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -174,7 +174,7 @@ $time_of_day:
       @at-root .darkness {
         .foreground:before {
           filter: brightness(20%) grayscale(70%);
-        } 
+        }
       }
       @at-root .sunrise {
         .foreground:before {

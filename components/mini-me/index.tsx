@@ -1,51 +1,82 @@
-import React from 'react'
-import cx from 'classnames'
+import React from 'react';
+import Image from 'next/image';
+import cx from 'classnames';
 
 /* Import Types */
-import Props from './types/props'
+import Props from './types/props';
 
 /* import SVGs */
-import Phone from './images/phone.svg' 
-import AtDesk from './images/at-desk.svg' 
-import Available from './images/available.svg' 
-import Blushing from './images/blushing.svg' 
-import Skills from './images/skills.svg' 
-import Smile from './images/smile.svg' 
-import Beach from './images/beach.svg' 
-
+import Phone from './images/phone.svg';
+import AtDesk from './images/at-desk.svg';
+import Available from './images/available.svg';
+import Blushing from './images/blushing.svg';
+import Skills from './images/skills.svg';
+import Smile from './images/smile.svg';
+import Beach from './images/beach.svg';
 
 /* import styles */
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
 
 /* Render component */
-export const MiniMe: React.FC<Props> = ({ name, width, position, classes}: Props) => {
-  
+export const MiniMe: React.FC<Props> = ({
+  name,
+  width,
+  position,
+  classes
+}: Props) => {
   const selectMiniMe = (name: string): any => {
     switch (name) {
-      case 'available' :
-        return <img src={Available} />
+      case 'available':
+        return (
+          <Image
+            priority
+            src={Available}
+            alt="A cartoon of me, waving and smiling"
+          />
+        );
       case 'at-desk':
-        return <img src={AtDesk} />
+        return (
+          <Image
+            priority
+            src={AtDesk}
+            alt="A cartoon of me, sittng at my desk and working"
+          />
+        );
       case 'blushing':
-        return <img src={Blushing} />
+        return (
+          <Image priority src={Blushing} alt="A cartoon of me, blushing" />
+        );
       case 'skills':
-        return <img src={Skills} />
+        return (
+          <Image
+            priority
+            src={Skills}
+            alt="A cartoon of me, gesturing to a panel"
+          />
+        );
       case 'phone':
-        return <img src={Phone} />
-        case 'beach':
-          return <img src={Beach} />
+        return (
+          <Image priority src={Phone} alt="A cartoon of me, on the phone" />
+        );
+      case 'beach':
+        return (
+          <Image
+            priority
+            src={Beach}
+            alt="A cartoon of me, in a swimsuit with an inflatable duck"
+          />
+        );
       case 'smile':
       default:
-        return <img src={Smile} />
+        return <Image priority src={Smile} alt="A cartoon of me, smiling" />;
     }
-  }
+  };
 
-
-
-  return <div className={cx(styles['mini-me'], styles[`w-${width}`], classes)}>
-    { selectMiniMe(name) }
+  return (
+    <div className={cx(styles['mini-me'], styles[`w-${width}`], classes)}>
+      {selectMiniMe(name)}
     </div>
-}
+  );
+};
 
-
-export default MiniMe
+export default MiniMe;
